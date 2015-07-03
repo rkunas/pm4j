@@ -39,8 +39,8 @@ public abstract class PmBeanImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PAR
      * Füllt die Attribute vom PmBean
      */
     public void writePmAttributesImpl() {
-        BeanReadWriteUtil readingToPms = new BeanReadWriteUtil<T_PM_BEAN>();
-        readingToPms.read(pmBean,this);
+        BeanReadWriteUtil readObject = new BeanReadWriteUtil<T_PM_BEAN>();
+        readObject.readBeanToPms(pmBean, this);
     }
 
     public Boolean getChanged() {

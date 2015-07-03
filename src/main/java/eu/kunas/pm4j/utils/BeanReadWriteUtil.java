@@ -10,6 +10,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
+ * Schreibt und liest von und zu der Bean und dem PM
+ * <p>
  * Created by Kunas on 03.07.2015.
  */
 public class BeanReadWriteUtil<T_BEAN> {
@@ -18,8 +20,7 @@ public class BeanReadWriteUtil<T_BEAN> {
 
     protected static Log log = LogFactory.getLog(BeanReadWriteUtil.class);
 
-
-    public void read(T_BEAN bean, PmBeanImpl pm) {
+    public void readBeanToPms(T_BEAN bean, PmBeanImpl pm) {
         if (bean == null) {
             return;
         }
@@ -42,7 +43,8 @@ public class BeanReadWriteUtil<T_BEAN> {
         } catch (NoSuchFieldException exc) {
             log.error("Unable to get field from bean " + bean.getClass().toString());
         } catch (IllegalAccessException exc) {
-            System.out.println(exc.getMessage());
+            // TODO: Wodurch wird diese Exception genau ausgelöst ?
+            log.error("IllegalAccess " + exc.getMessage());
         }
     }
 
@@ -56,20 +58,22 @@ public class BeanReadWriteUtil<T_BEAN> {
             return methodsValue;
 
         } catch (NoSuchMethodException exc) {
-            log.error("Metod " + methodNameString + " not found on Bean " + bean.getClass().toString() +". Please check youre Bean that it follows Java Code Style for getter Methods");
+            log.error("Metod " + methodNameString + " not found on Bean " + bean.getClass().toString() + ". Please check the Bean, it has to follow Java Code Style for getter Methods");
+
         } catch (InvocationTargetException exc) {
             log.error("Method " + methodNameString + " not possible to invoke");
+        } finally {
+            return null;
         }
-        Field beanField = bean.getClass().getField(pmField.getName());
-        return beanField.get(bean);
+
     }
 
     private String buildGetterMethodName(Field pmField) {
 
         StringBuilder methodNameStringBuilder = new StringBuilder();
 
-        String fieldNameFirstCharUpperCase = pmField.getName().substring(0,1).toUpperCase();
-        String fieldNameWithoutFirstChar = pmField.getName().substring(1,pmField.getName().length());
+        String fieldNameFirstCharUpperCase = pmField.getName().substring(0, 1).toUpperCase();
+        String fieldNameWithoutFirstChar = pmField.getName().substring(1, pmField.getName().length());
 
         methodNameStringBuilder.append(GET);
         methodNameStringBuilder.append(fieldNameFirstCharUpperCase);
