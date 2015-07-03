@@ -56,7 +56,7 @@ public class BeanReadWriteUtil<T_BEAN> {
             return methodsValue;
 
         } catch (NoSuchMethodException exc) {
-            log.error("Metod " + methodNameString + " not found. Please check youre Bean that it follows Java Code Style for getter Methods");
+            log.error("Metod " + methodNameString + " not found on Bean " + bean.getClass().toString() +". Please check youre Bean that it follows Java Code Style for getter Methods");
         } catch (InvocationTargetException exc) {
             log.error("Method " + methodNameString + " not possible to invoke");
         }

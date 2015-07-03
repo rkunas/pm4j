@@ -33,7 +33,11 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDetailPm,CustomerDto> {
     public final PmCommandImpl<CustomerDetailPm> newCommand = new PmCommandImpl<CustomerDetailPm>(this) {
         @Override
         protected void doItImpl() {
-            setPmBean(new CustomerDto("Muster","Muster"));
+            CustomerDto customerDto = new CustomerDto();
+            customerDto.setFirstName("Muster");
+            customerDto.setLastName("Muster");
+
+            setPmBean(customerDto);
         }
 
         @Override
