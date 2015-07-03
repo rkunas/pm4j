@@ -43,7 +43,7 @@ public class BeanReadWriteUtil<T_BEAN> {
         } catch (NoSuchFieldException exc) {
             log.error("Unable to get field from bean " + bean.getClass().toString());
         } catch (IllegalAccessException exc) {
-            // TODO: Wodurch wird diese Exception genau ausgelöst ?
+            // TODO: Wodurch wird diese Exception genau ausgelï¿½st ?
             log.error("IllegalAccess " + exc.getMessage());
         }
     }
@@ -51,10 +51,12 @@ public class BeanReadWriteUtil<T_BEAN> {
     private Object getBeanFieldValue(T_BEAN bean, Field pmField) throws NoSuchFieldException, IllegalAccessException {
         Method beanFieldMethod = null;
         String methodNameString = null;
+        Object methodsValue = null;
+
         try {
             methodNameString = buildGetterMethodName(pmField);
             beanFieldMethod = bean.getClass().getMethod(methodNameString);
-            Object methodsValue = beanFieldMethod.invoke(bean);
+            methodsValue = beanFieldMethod.invoke(bean);
             return methodsValue;
 
         } catch (NoSuchMethodException exc) {
@@ -62,8 +64,8 @@ public class BeanReadWriteUtil<T_BEAN> {
 
         } catch (InvocationTargetException exc) {
             log.error("Method " + methodNameString + " not possible to invoke");
-        } finally {
-            return null;
+        }finally {
+            return methodsValue;
         }
 
     }
