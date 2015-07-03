@@ -6,7 +6,7 @@ package eu.kunas.pmj.examples.customer.model;
 public class CustomerDto {
 
     private Long id;
-    private String firstName;
+    public String firstName;
     private String lastName;
 
     public CustomerDto() {
