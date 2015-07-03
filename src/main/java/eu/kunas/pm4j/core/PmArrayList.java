@@ -1,4 +1,4 @@
-package eu.kunas.pm4j;
+package eu.kunas.pm4j.core;
 
 import java.io.Serializable;
 import java.util.ArrayList;

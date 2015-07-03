@@ -1,5 +1,7 @@
-package eu.kunas.pm4j;
+package eu.kunas.pm4j.core;
 
+
+import eu.kunas.pm4j.utils.BeanReadWriteUtil;
 
 import java.io.Serializable;
 
@@ -37,7 +39,8 @@ public abstract class PmBeanImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PAR
      * Füllt die Attribute vom PmBean
      */
     public void writePmAttributesImpl() {
-
+        BeanReadWriteUtil readingToPms = new BeanReadWriteUtil<T_PM_BEAN>();
+        readingToPms.read(pmBean,this);
     }
 
     public Boolean getChanged() {

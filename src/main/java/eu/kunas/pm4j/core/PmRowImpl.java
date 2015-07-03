@@ -1,4 +1,4 @@
-package eu.kunas.pm4j;
+package eu.kunas.pm4j.core;
 
 /*
  * Copyright (c) 2014. THINKERLAB

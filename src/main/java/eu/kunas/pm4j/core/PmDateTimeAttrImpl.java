@@ -1,4 +1,4 @@
-package eu.kunas.pm4j;
+package eu.kunas.pm4j.core;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;

@@ -1,4 +1,4 @@
-package eu.kunas.pm4j;
+package eu.kunas.pm4j.core;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

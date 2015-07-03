@@ -1,8 +1,8 @@
 package eu.kunas.pmj.examples.customer.pms;
 
-import eu.kunas.pm4j.PmBeanImpl;
-import eu.kunas.pm4j.PmCommandImpl;
-import eu.kunas.pm4j.PmStringAttrImpl;
+import eu.kunas.pm4j.core.PmBeanImpl;
+import eu.kunas.pm4j.core.PmCommandImpl;
+import eu.kunas.pm4j.core.PmStringAttrImpl;
 import eu.kunas.pmj.examples.customer.model.CustomerDto;
 
 /**
@@ -14,8 +14,6 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDetailPm,CustomerDto> {
 
     public final PmStringAttrImpl<CustomerDetailPm> lastName = new PmStringAttrImpl<CustomerDetailPm>(this);
 
-
-
     public CustomerDetailPm(){
 
     }
@@ -23,7 +21,7 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDetailPm,CustomerDto> {
     public final PmCommandImpl<CustomerDetailPm> saveCommand = new PmCommandImpl<CustomerDetailPm>(this){
         @Override
         protected void doItImpl() {
-            // tu was
+
         }
 
         @Override
@@ -35,9 +33,7 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDetailPm,CustomerDto> {
     public final PmCommandImpl<CustomerDetailPm> newCommand = new PmCommandImpl<CustomerDetailPm>(this) {
         @Override
         protected void doItImpl() {
-            // tu was
-
-
+            setPmBean(new CustomerDto("Muster","Muster"));
         }
 
         @Override
