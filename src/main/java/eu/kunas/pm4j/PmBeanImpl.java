@@ -7,9 +7,9 @@ import java.io.Serializable;
  * Diese Klasse enthaelt das Basis Objekt
  * Es ist wie eine art schlüsselobjekt. Auf diesem Objekt wird zwar gearbeitet,
  * aber die klasse welche von dieser klasse erbt kann die Childs losgelöst aufbehwaren
- *
+ * <p>
  * Eine Bean stellt ein Komplexes Objekt dar
- *
+ * <p>
  * Created by ramazan on 23.10.14
  */
 public abstract class PmBeanImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PARENT> implements Serializable {
@@ -26,9 +26,10 @@ public abstract class PmBeanImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PAR
 
     /**
      * gibt das pmBean zurück ohne es mit den aktuellen attributen zu befüllen
+     *
      * @return
      */
-    public T_PM_BEAN getPmBeanWithoutAttrRead(){
+    public T_PM_BEAN getPmBeanWithoutAttrRead() {
         return pmBean;
     }
 
@@ -39,7 +40,7 @@ public abstract class PmBeanImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PAR
 
     }
 
-    public Boolean getChanged(){
+    public Boolean getChanged() {
         return Boolean.FALSE;
     }
 
@@ -50,7 +51,7 @@ public abstract class PmBeanImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PAR
 
     }
 
-    public final void reset(){
+    public final void reset() {
         resetImpl();
     }
 

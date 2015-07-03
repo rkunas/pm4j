@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * Dieses PM stellt ein Auswahl Element dar. Er kann als Option in einem Attribut verwendet werden
- *
+ * <p>
  * Created by kunasra on 08.12.14.
  */
 public class PmOption<T_PM_BEAN> implements Serializable {
@@ -15,6 +15,7 @@ public class PmOption<T_PM_BEAN> implements Serializable {
         this.value = object;
         this.label = label;
     }
+
     public PmOption() {
 
     }

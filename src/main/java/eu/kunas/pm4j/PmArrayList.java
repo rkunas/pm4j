@@ -37,18 +37,18 @@ public final class PmArrayList<T_ELEMENT extends PmRowImpl> extends ArrayList<T_
         return super.remove(o);
     }
 
-    public void removeRow(T_ELEMENT row){
+    public void removeRow(T_ELEMENT row) {
         remove(row);
     }
 
-    public void reset(){
+    public void reset() {
         changed = Boolean.FALSE;
     }
 
-    public void moveUp(T_ELEMENT el){
+    public void moveUp(T_ELEMENT el) {
 
         final int indexToMove = this.indexOf(el);
-        if(indexToMove != 0){
+        if (indexToMove != 0) {
             Collections.swap(this, indexToMove, indexToMove - 1);
             changed = Boolean.TRUE;
         }
@@ -58,18 +58,18 @@ public final class PmArrayList<T_ELEMENT extends PmRowImpl> extends ArrayList<T_
     /**
      * Sollte aufgerufen werden wenn eine veränderung an der Liste ausgeführt wird
      */
-    public void writePmAttributes(){
-        for(PmRowImpl row :  this){
+    public void writePmAttributes() {
+        for (PmRowImpl row : this) {
             row.writePmAttributesImpl();
         }
     }
 
-    public void clear(){
+    public void clear() {
         super.removeAll(this);
         super.clear();
     }
 
-    public void moveDown(T_ELEMENT el){
+    public void moveDown(T_ELEMENT el) {
 
         final int indexToMove = this.indexOf(el);
 

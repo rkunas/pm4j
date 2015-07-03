@@ -1,11 +1,8 @@
 package eu.kunas.pm4j;
 
-import de.akdb.ok.verkehr.igvk.jsf.utils.MessageUtil;
-
 import java.io.Serializable;
 
 /**
- *
  * Created by kunasra on 26.11.14.
  */
 public class PmIntegerAttrImpl<T_PM_PARENT> extends PmAttrImpl<T_PM_PARENT, Integer> implements Serializable {
@@ -46,7 +43,7 @@ public class PmIntegerAttrImpl<T_PM_PARENT> extends PmAttrImpl<T_PM_PARENT, Inte
             return true;
         }
         if (value == null) {
-            MessageUtil.businessErrorMessage(getTitle(), "Wert ist erforderlich");
+            log.info(getTitle() + "Wert ist erforderlich");
             return false;
         }
 

@@ -4,22 +4,22 @@ package eu.kunas.pm4j;
 import java.io.Serializable;
 
 /**
- * Diese klasse stellt ein minimales pmold dar.
- * Alle Pms sind sozusagen durch ein parent mit einander verbunden.
- * <p/>
- * Diese Klasse kann von grösseren PMs sowie von kleinen Attributen geerbt werden
- * <p/>
+ * Diese klasse stellt ein minimales pm dar.
+ * Alle Pms sind sozusagen durch ein parent miteinander verbunden.
+ * <p>
+ * Diese Klasse kann von komplexeren PMs sowie von kleinen Attributen geerbt werden
+ * <p>
  * Bei der Instanziierung kann es mit und ohne ein Parent Instanziiert werden
- * <p/>
+ * <p>
  * Created by ramazan on 24.10.14.
  */
 public class PmImpl<T_PM_PARENT> implements Serializable {
 
-    //Drückt aus ob ein pmold gültig ist
+    //Drückt aus ob ein pm gültig ist
     private Boolean valid = Boolean.TRUE;
-    // Drückt die Sichtbarkeit in einer Maske aus, vergleichbar mit render="true/false" in JSF
+    // Drückt die Sichtbarkeit in einer Maske aus
     private Boolean visible = Boolean.TRUE;
-    // Drückt aus ob das PM Aktiv ist
+    // Drückt aus ob das PM Aktiv ist, editierbar ist
     private Boolean enabled = Boolean.TRUE;
     // Gibt an ob das Value gefuellt sein muss
     private Boolean required;

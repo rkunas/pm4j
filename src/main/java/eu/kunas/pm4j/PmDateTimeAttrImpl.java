@@ -21,8 +21,7 @@ public class PmDateTimeAttrImpl<T_PM_PARENT> extends PmAttrImpl<T_PM_PARENT, Dat
     public String getStringValue() {
         if (getValue() != null) {
             stringValue = formatter.print(getValue());
-        }
-        else {
+        } else {
             stringValue = formatter.print(new DateTime());
         }
         return stringValue;

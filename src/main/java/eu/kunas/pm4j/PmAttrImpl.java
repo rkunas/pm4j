@@ -1,5 +1,8 @@
 package eu.kunas.pm4j;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
@@ -9,7 +12,7 @@ import java.util.List;
  */
 public class PmAttrImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PARENT> implements Serializable {
 
-    // protected static Log log = LogFactory.getLog(PmAttrImpl.class);
+    protected static Log log = LogFactory.getLog(PmAttrImpl.class);
     protected Boolean changed = Boolean.FALSE;
     protected T_PM_BEAN value;
     protected T_PM_BEAN defaultValue;
@@ -71,6 +74,13 @@ public class PmAttrImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PARENT> impl
         return value;
     }
 
+    public final void setValue(T_PM_BEAN value1) {
+        T_PM_BEAN value2 = beforeValueSetImpl(value1);
+        beforeValueSetImpl();
+        changeCheck(this.value, value2);
+        this.value = value2;
+        afterValueSetImpl();
+    }
 
     /**
      * Diese Methode kann überschrieben werden. Hier in dieser Methode kann der Wert verändert werden falls es irgendwie verfälscht wird
@@ -84,14 +94,6 @@ public class PmAttrImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PARENT> impl
      */
     public void beforeValueSetImpl() {
 
-    }
-
-    public final void setValue(T_PM_BEAN value1) {
-        T_PM_BEAN value2 = beforeValueSetImpl(value1);
-        beforeValueSetImpl();
-        changeCheck(this.value, value2);
-        this.value = value2;
-        afterValueSetImpl();
     }
 
     /**

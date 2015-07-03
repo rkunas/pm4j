@@ -5,7 +5,6 @@ import de.akdb.ok.verkehr.igvk.jsf.utils.MessageUtil;
 import java.io.Serializable;
 
 /**
- *
  * Created by kunasra on 26.11.14.
  */
 public class PmStringAttrImpl<T_PM_PARENT> extends PmAttrImpl<T_PM_PARENT, String> implements Serializable {
@@ -21,7 +20,7 @@ public class PmStringAttrImpl<T_PM_PARENT> extends PmAttrImpl<T_PM_PARENT, Strin
         if (originVal == null && newVal != null) {
             if (newVal.isEmpty()) {
                 return;
-            }else{
+            } else {
                 changed = Boolean.TRUE;
                 return;
             }
@@ -30,7 +29,7 @@ public class PmStringAttrImpl<T_PM_PARENT> extends PmAttrImpl<T_PM_PARENT, Strin
         if (originVal != null && newVal == null) {
             if (originVal.isEmpty()) {
                 return;
-            }else{
+            } else {
                 changed = Boolean.TRUE;
                 return;
             }
