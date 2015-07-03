@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 
 /**
  * Schreibt und liest von und zu der Bean und dem PM
- * <p>
+ * <p/>
  * Created by Kunas on 03.07.2015.
  */
 public class BeanReadWriteUtil<T_BEAN> {
@@ -64,10 +64,10 @@ public class BeanReadWriteUtil<T_BEAN> {
 
         } catch (InvocationTargetException exc) {
             log.error("Method " + methodNameString + " not possible to invoke");
-        }finally {
+
+        } finally {
             return methodsValue;
         }
-
     }
 
     private String buildGetterMethodName(Field pmField) {
