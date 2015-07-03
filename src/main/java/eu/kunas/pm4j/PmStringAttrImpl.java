@@ -1,7 +1,5 @@
 package eu.kunas.pm4j;
 
-import de.akdb.ok.verkehr.igvk.jsf.utils.MessageUtil;
-
 import java.io.Serializable;
 
 /**
@@ -46,11 +44,12 @@ public class PmStringAttrImpl<T_PM_PARENT> extends PmAttrImpl<T_PM_PARENT, Strin
             return true;
         }
         if (value == null) {
-            MessageUtil.businessErrorMessage(getTitle(), "Wert ist erforderlich");
+            // TODO: Fehler Liste sammeln
+            log.info(getTitle() + "Wert ist erforderlich");
             return false;
         }
         if (value.isEmpty()) {
-            MessageUtil.businessErrorMessage(getTitle(), "Wert ist erforderlich");
+            log.info(getTitle() + "Wert ist erforderlich");
             return false;
         }
 
