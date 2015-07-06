@@ -29,10 +29,6 @@ public class PmAttrImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PARENT> impl
         this.defaultValue = defaultValue;
     }
 
-    public List<T_PM_BEAN> getOptions() {
-        return Collections.emptyList();
-    }
-
     /**
      * Das ist eine spezialmethode um die PmOptions in ein SelectItem zu convertieren
      * @return

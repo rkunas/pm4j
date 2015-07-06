@@ -8,6 +8,8 @@ public class CustomerDto {
     private Long id;
     public String firstName;
     private String lastName;
+    private String country;
+    private Boolean company;
 
     public CustomerDto() {
 
@@ -16,6 +18,22 @@ public class CustomerDto {
     public CustomerDto(String muster, String muster1) {
         this.firstName = muster;
         this.lastName = muster1;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public Boolean getCompany() {
+        return company;
+    }
+
+    public void setCompany(Boolean company) {
+        this.company = company;
     }
 
     public Long getId() {
