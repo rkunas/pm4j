@@ -10,6 +10,8 @@ public class CustomerDto {
     private String lastName;
     private String country;
     private Boolean company;
+    private Integer age;
+
 
     public CustomerDto() {
 
@@ -18,6 +20,15 @@ public class CustomerDto {
     public CustomerDto(String muster, String muster1) {
         this.firstName = muster;
         this.lastName = muster1;
+    }
+
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getCountry() {

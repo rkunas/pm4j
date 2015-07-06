@@ -45,11 +45,19 @@ public class CustomerDetailPmTest {
         customerDetailPm.firstName.setValue("");
         customerDetailPm.lastName.setValue(null);
 
+        Assert.assertTrue(customerDetailPm.firstName.getChanged());
+
+        Assert.assertTrue(customerDetailPm.firstName.getEnabled());
+
+        Assert.assertTrue(customerDetailPm.firstName.getVisible());
+
+        customerDetailPm.country.setValue(customerDetailPm.country.getPmOptions().get(0).getLabel());
+
         customerDetailPm.saveCommand.doIt();
 
+
+
         Assert.assertFalse(customerDetailPm.saveCommand.getValid());
-
-
 
     }
 

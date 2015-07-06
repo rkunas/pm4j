@@ -14,6 +14,8 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDetailPm,CustomerDto> {
 
     private CustomerService customerService = new CustomerService();
 
+    public final PmIntegerAttrImpl<CustomerDetailPm> age = new PmIntegerAttrImpl<CustomerDetailPm>(this);
+
     public final PmBooleanAttrImpl<CustomerDetailPm> company = new PmBooleanAttrImpl<CustomerDetailPm>(this);
 
     public final PmStringAttrImpl<CustomerDetailPm> country = new PmStringAttrImpl<CustomerDetailPm>(this){
@@ -34,6 +36,8 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDetailPm,CustomerDto> {
         public Boolean getRequired() {
             return true;
         }
+
+
     };
 
     public final PmStringAttrImpl<CustomerDetailPm> lastName = new PmStringAttrImpl<CustomerDetailPm>(this){
