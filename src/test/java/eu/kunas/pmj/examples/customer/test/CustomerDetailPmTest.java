@@ -32,6 +32,10 @@ public class CustomerDetailPmTest {
 
         Assert.assertEquals("Muster firstname", customerDetailPm.firstName.getValue());
         Assert.assertEquals("Muster lastname", customerDetailPm.lastName.getValue());
+
+        customerDetailPm.saveCommand.doIt();
+
+        Assert.assertTrue(customerDetailPm.saveCommand.getValid());
     }
 
     @Test

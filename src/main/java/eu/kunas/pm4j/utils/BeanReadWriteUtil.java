@@ -57,7 +57,6 @@ public class BeanReadWriteUtil<T_BEAN> {
             methodNameString = buildGetterMethodName(pmField);
             beanFieldMethod = bean.getClass().getMethod(methodNameString);
             methodsValue = beanFieldMethod.invoke(bean);
-            return methodsValue;
 
         } catch (NoSuchMethodException exc) {
             log.error("Metod " + methodNameString + " not found on Bean " + bean.getClass().toString() + ". Please check the Bean, it has to follow Java Code Style for getter Methods");
