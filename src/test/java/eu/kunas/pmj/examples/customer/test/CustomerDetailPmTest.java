@@ -55,13 +55,7 @@ public class CustomerDetailPmTest {
 
         customerDetailPm.saveCommand.doIt();
 
-
-
         Assert.assertFalse(customerDetailPm.saveCommand.getValid());
 
     }
-
-
-
-
 }
