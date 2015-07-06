@@ -1,4 +1,4 @@
-package eu.kunas.pm4j.fx.controls;
+package eu.kunas.pm4j.fx.base;
 
 import eu.kunas.pm4j.core.PmCommandImpl;
 import eu.kunas.pm4j.core.PmImpl;
@@ -15,9 +15,9 @@ public abstract class FXControl<T_PM extends PmImpl> {
 
     protected T_PM pm;
 
-    abstract void refresh();
+    public abstract void refresh();
 
-    public void bindPmCommand(T_PM pm){
+    public void bindPm(T_PM pm){
         this.pm = pm;
         refresh();
     }

@@ -1,9 +1,9 @@
-package eu.kunas.pm4j.fx.controls;
+package eu.kunas.pm4j.fx;
 
 import eu.kunas.pm4j.core.PmCommandImpl;
+import eu.kunas.pm4j.fx.base.FXControl;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 
 import java.net.URL;
