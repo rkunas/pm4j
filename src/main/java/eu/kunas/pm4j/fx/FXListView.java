@@ -21,7 +21,7 @@ public class FXListView extends FXControl<PmAttrImpl>{
     public void refresh() {
         listView.getItems().clear();
 
-        final ObservableList data = FXCollections.observableArrayList(pm.getPmOptions());
+        ObservableList data = FXCollections.observableArrayList(pm.getPmOptions());
 
         listView.setItems(data);
     }
