@@ -41,6 +41,7 @@ public class FXButton extends FXControl<PmCommandImpl> implements Initializable 
     }
 
     private void onActionRefresh() {
+
         if (this.doItControls != null) {
             for (final FXControl control : this.doItControls) {
                 control.refresh();
@@ -51,6 +52,11 @@ public class FXButton extends FXControl<PmCommandImpl> implements Initializable 
     @FXML
     private void onAction(){
         this.pm.doIt();
+
+        // Sich selbst Refreshen
+        this.refresh();
+
+        // Andere Refreshen
         onActionRefresh();
     }
 
