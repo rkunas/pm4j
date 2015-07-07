@@ -54,7 +54,7 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDetailPm,CustomerDto> {
     public final PmCommandImpl<CustomerDetailPm> saveCommand = new PmCommandImpl<CustomerDetailPm>(this){
         @Override
         protected void doItImpl() {
-
+            CustomerDto customerDto = getPmBean();
         }
 
         @Override

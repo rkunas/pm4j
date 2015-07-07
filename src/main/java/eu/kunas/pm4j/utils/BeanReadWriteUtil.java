@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 
 /**
  * Schreibt und liest von und zu der Bean und dem PM
- * <p/>
+ * <p>
  * Created by Kunas on 03.07.2015.
  */
 public class BeanReadWriteUtil<T_BEAN> {
@@ -33,7 +33,7 @@ public class BeanReadWriteUtil<T_BEAN> {
 
         for (Field pmField : pmFields) {
             if (PmAttrImpl.class.isAssignableFrom(pmField.getType())) {
-                setBeanFieldValue(bean, pmField);
+                setBeanFieldValue(bean, pmField, pm);
 
             }
         }
@@ -51,16 +51,16 @@ public class BeanReadWriteUtil<T_BEAN> {
 
         for (Field pmField : pmFields) {
             if (PmAttrImpl.class.isAssignableFrom(pmField.getType())) {
-                getBeanFieldValue(bean, pmField,pm);
+                getBeanFieldValue(bean, pmField, pm);
             }
         }
     }
 
-    private void setBeanFieldValue(T_BEAN bean, Field pmField) {
+    private void setBeanFieldValue(T_BEAN bean, Field pmField, PmBeanImpl pm) {
         String methodNameString = null;
         Method beanFieldMethod = null;
         try {
-            PmAttrImpl pmAttr = (PmAttrImpl) pmField.get(pmField);
+            PmAttrImpl pmAttr = (PmAttrImpl) pmField.get(pm);
 
             methodNameString = buildSetterMethodName(pmField);
 
@@ -76,7 +76,7 @@ public class BeanReadWriteUtil<T_BEAN> {
         }
     }
 
-    private void getBeanFieldValue(T_BEAN bean, Field pmField,PmBeanImpl pm) {
+    private void getBeanFieldValue(T_BEAN bean, Field pmField, PmBeanImpl pm) {
         Method beanFieldMethod = null;
         String methodNameString = null;
         Object methodsValue = null;
