@@ -8,6 +8,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.util.StringConverter;
 
+import java.util.Iterator;
+
 /**
  * Created by Kunas on 07.07.2015.
  */
@@ -32,17 +34,14 @@ public class FXComboBox extends FXControl<PmAttrImpl> {
 
             String enumerable = (String) pm.getValue();
 
-            for (PmOption pmOption : pm.getPmOptions()) {
-                if (pmOption.getLabel().equals(enumerable)) {
-                    comboBox.getSelectionModel().select(pmOption);
-                }
+            Iterator<PmOption> it = pm.getPmOptions().iterator();
+            while (it.hasNext()) {
+                PmOption pmOption = it.next();
+                comboBox.getSelectionModel().select(pmOption);
             }
-
-            //comboBox.getSelectionModel().select(pm.getPmOptions().findOptionForIdString(enumerable));
         } else {
             comboBox.getSelectionModel().clearSelection();
         }
-
         label.setText(pm.getTitle());
     }
 
