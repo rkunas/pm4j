@@ -25,11 +25,20 @@ public class FXComboBox extends FXControl<PmAttrImpl> {
         comboBox.setConverter(stringConverter);
         comboBox.getItems().clear();
         comboBox.valueProperty().set(null);
-        comboBox.getItems().addAll(pm.getOptionSet().getOptions());
+        comboBox.getItems().addAll(pm.getPmOptions());
         if (pm.getValue() != null) {
+
             comboBox.getSelectionModel().clearSelection();
+
             String enumerable = (String) pm.getValue();
-            comboBox.getSelectionModel().select(pm.getOptionSet().findOptionForIdString(enumerable));
+
+            for (PmOption pmOption : pm.getPmOptions()) {
+                if (pmOption.getLabel().equals(enumerable)) {
+                    comboBox.getSelectionModel().select(pmOption);
+                }
+            }
+
+            //comboBox.getSelectionModel().select(pm.getPmOptions().findOptionForIdString(enumerable));
         } else {
             comboBox.getSelectionModel().clearSelection();
         }
@@ -41,7 +50,7 @@ public class FXComboBox extends FXControl<PmAttrImpl> {
         @Override
         public String toString(final Object t) {
             PmOption option = (PmOption) t;
-            return ((PmOption) t).getPmTitle();
+            return ((PmOption) t).getLabel();
         }
 
         @Override
