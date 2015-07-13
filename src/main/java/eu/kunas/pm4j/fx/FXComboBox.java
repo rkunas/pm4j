@@ -37,7 +37,9 @@ public class FXComboBox extends FXControl<PmAttrImpl> {
             Iterator<PmOption> it = pm.getPmOptions().iterator();
             while (it.hasNext()) {
                 PmOption pmOption = it.next();
-                comboBox.getSelectionModel().select(pmOption);
+                if (enumerable.equals(pmOption.getValue())) {
+                    comboBox.getSelectionModel().select(pmOption);
+                }
             }
         } else {
             comboBox.getSelectionModel().clearSelection();
