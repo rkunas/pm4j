@@ -56,7 +56,8 @@ public class PmImpl<T_PM_PARENT> implements Serializable {
      * Stößt irgendeine art von validierung an
      */
     public final void validate() {
-        setValid(validateImpl());
+        Boolean returnOfValidateImpl = validateImpl();
+        setValid(returnOfValidateImpl);
     }
 
     /**
