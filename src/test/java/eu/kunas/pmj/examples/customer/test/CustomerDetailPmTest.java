@@ -3,6 +3,7 @@ package eu.kunas.pmj.examples.customer.test;
 import eu.kunas.pmj.examples.customer.pms.CustomerDetailPm;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -56,6 +57,26 @@ public class CustomerDetailPmTest {
         customerDetailPm.saveCommand.doIt();
 
         Assert.assertFalse(customerDetailPm.saveCommand.getValid());
+
+    }
+
+    @Test
+    @Ignore
+    public void testBeanWithoutReadFromPm() {
+        customerDetailPm.loadCommand.doIt();
+        customerDetailPm.firstName.setValue("Marcus");
+
+        Assert.assertNotEquals(customerDetailPm.getPmBeanWithoutAttrRead().getFirstName(),customerDetailPm.firstName.getValue());
+
+    }
+
+    @Test
+    @Ignore
+    public void testBeanReadFromPm() {
+        customerDetailPm.loadCommand.doIt();
+        customerDetailPm.firstName.setValue("Marcus");
+
+        Assert.assertEquals(customerDetailPm.getPmBean().getFirstName(), customerDetailPm.firstName.getValue());
 
     }
 }

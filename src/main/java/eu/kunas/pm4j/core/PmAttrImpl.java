@@ -4,13 +4,15 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by ramazan on 02.11.14.
  */
-public class PmAttrImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PARENT> implements Serializable {
+public class PmAttrImpl<T_PM_PARENT, T_PM_BEAN extends Object> extends PmImpl<T_PM_PARENT> implements Serializable {
 
     protected static Log log = LogFactory.getLog(PmAttrImpl.class);
     protected Boolean changed = Boolean.FALSE;
@@ -27,6 +29,22 @@ public class PmAttrImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PARENT> impl
 
     public void setDefaultValue(T_PM_BEAN defaultValue) {
         this.defaultValue = defaultValue;
+    }
+
+    public Class getPmAttrType() {
+        Type c1 = getClass().getGenericSuperclass();
+        ParameterizedType c2 = (ParameterizedType)c1;
+
+        Class beanClassofPm = null;
+
+        if(c2.getActualTypeArguments().length == 2) {
+             beanClassofPm = (Class) c2.getActualTypeArguments()[1];
+        }
+        if(c2.getActualTypeArguments().length == 1) {
+             beanClassofPm = (Class) c2.getActualTypeArguments()[0];
+        }
+
+        return beanClassofPm;
     }
 
     /**

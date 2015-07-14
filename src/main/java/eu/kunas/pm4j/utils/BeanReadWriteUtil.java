@@ -64,7 +64,7 @@ public class BeanReadWriteUtil<T_BEAN> {
 
             methodNameString = buildSetterMethodName(pmField);
 
-            beanFieldMethod = bean.getClass().getMethod(methodNameString);
+            beanFieldMethod = bean.getClass().getMethod(methodNameString,pmAttr.getPmAttrType());
 
             beanFieldMethod.invoke(bean, pmAttr.getValue());
         } catch (IllegalAccessException exc) {
