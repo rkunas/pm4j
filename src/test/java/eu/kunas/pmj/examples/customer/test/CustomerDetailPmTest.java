@@ -61,7 +61,6 @@ public class CustomerDetailPmTest {
     }
 
     @Test
-    @Ignore
     public void testBeanWithoutReadFromPm() {
         customerDetailPm.loadCommand.doIt();
         customerDetailPm.firstName.setValue("Marcus");
@@ -71,12 +70,13 @@ public class CustomerDetailPmTest {
     }
 
     @Test
-    @Ignore
     public void testBeanReadFromPm() {
         customerDetailPm.loadCommand.doIt();
         customerDetailPm.firstName.setValue("Marcus");
 
         Assert.assertEquals(customerDetailPm.getPmBean().getFirstName(), customerDetailPm.firstName.getValue());
 
+        System.out.println(customerDetailPm.getPmBean().getFirstName());
+        System.out.println(customerDetailPm.firstName.getValue());
     }
 }
