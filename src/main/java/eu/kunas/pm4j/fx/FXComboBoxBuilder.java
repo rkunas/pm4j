@@ -8,7 +8,7 @@ import eu.kunas.pm4j.utils.Loader;
  * Created by Kunas on 07.07.2015.
  */
 public class FXComboBoxBuilder extends FXBuilder<FXComboBoxBuilder, FXComboBox> {
-    public FXComboBoxBuilder(){
-        this.control = (FXComboBox) new Loader().loadController("/....*.fxml");
+    public FXComboBoxBuilder() {
+        this.control = new Loader<FXComboBox>().loadController("/....*.fxml");
     }
 }

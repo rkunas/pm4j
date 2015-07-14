@@ -10,7 +10,7 @@ import eu.kunas.pm4j.utils.Loader;
 public class FXButtonBuilder extends FXBuilder<FXButtonBuilder,FXButton> {
 
     public FXButtonBuilder() {
-        this.control = (FXButton) new Loader().loadController("/eu/kunas/pm4j/javafxsample/controls/MyButton.fxml");
+        this.control = new Loader<FXButton>().loadController("/eu/kunas/pm4j/javafxsample/controls/MyButton.fxml");
     }
 
     public FXButtonBuilder withRegisterOnAction(final FXControl lControl) {

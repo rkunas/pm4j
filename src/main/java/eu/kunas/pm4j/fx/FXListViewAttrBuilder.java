@@ -9,6 +9,6 @@ import eu.kunas.pm4j.utils.Loader;
 public class FXListViewAttrBuilder extends FXBuilder<FXListViewAttrBuilder, FXListViewAttr> {
 
     public FXListViewAttrBuilder(){
-        this.control = (FXListViewAttr) new Loader().loadController("/eu/....");
+        this.control = new Loader<FXListViewAttr>().loadController("/eu/....");
     }
 }

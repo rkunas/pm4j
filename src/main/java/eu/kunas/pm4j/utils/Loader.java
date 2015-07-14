@@ -8,9 +8,9 @@ import java.io.InputStream;
 /**
  * Created by Kunas on 06.07.2015.
  */
-public class Loader {
+public class Loader<T_FX_CONTROL> {
 
-    public Object loadController(final String url) {
+    public T_FX_CONTROL loadController(final String url) {
         final InputStream fxmlStream = null;
         try {
             final FXMLLoader loader = new FXMLLoader();
