@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.testfx.api.FxRobot;
 import org.testfx.framework.junit.ApplicationTest;
@@ -31,6 +32,7 @@ public class FxTest extends ApplicationTest {
     }
 
     @Test
+    @Ignore
     public void isButtonThere() throws Exception {
 
         clickOn("#button",MouseButton.PRIMARY);
