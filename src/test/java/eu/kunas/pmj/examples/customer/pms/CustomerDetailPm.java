@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Kunas on 03.07.2015.
  */
-public class CustomerDetailPm extends PmBeanImpl<CustomerDetailPm,CustomerDto> {
+public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm,CustomerDto> {
 
     private CustomerService customerService = new CustomerService();
 
@@ -46,6 +46,10 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDetailPm,CustomerDto> {
             return true;
         }
     };
+
+    public CustomerDetailPm(CustomerDialogPm parent){
+        super(parent);
+    }
 
     public CustomerDetailPm(){
 
