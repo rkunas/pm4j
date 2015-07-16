@@ -3,12 +3,15 @@ package eu.kunas.pm4j.fx;
 import eu.kunas.pm4j.core.PmAttrImpl;
 import eu.kunas.pm4j.core.PmOption;
 import eu.kunas.pm4j.fx.base.FXControl;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.util.StringConverter;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by Kunas on 07.07.2015.
@@ -20,6 +23,17 @@ public class FXComboBox extends FXControl<PmAttrImpl> {
 
     @FXML
     private ComboBox<PmOption> comboBox;
+
+    private List<FXControl> doItControls = null;
+
+    protected void registerOnActionRefresh(final FXControl control) {
+        if (this.doItControls == null) {
+            this.doItControls = new ArrayList<>();
+        }
+        if (control != null) {
+            this.doItControls.add(control);
+        }
+    }
 
     @Override
     public void refresh() {
@@ -61,4 +75,18 @@ public class FXComboBox extends FXControl<PmAttrImpl> {
 
         }
     };
+
+    @FXML
+    void onAction(ActionEvent event) {
+
+        if (comboBox.getSelectionModel().getSelectedItem() != null) {
+            pm.setValue(comboBox.getSelectionModel().getSelectedItem().getValue());
+        } else {
+            pm.setValue(null);
+        }
+
+        for (FXControl control : doItControls) {
+            control.refresh();
+        }
+    }
 }
