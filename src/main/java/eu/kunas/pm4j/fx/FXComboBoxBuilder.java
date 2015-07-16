@@ -9,7 +9,6 @@ import eu.kunas.pm4j.utils.Loader;
 public class FXComboBoxBuilder extends FXBuilder<FXComboBoxBuilder, FXComboBox> {
     public FXComboBoxBuilder() {
         this.control = new Loader<FXComboBox>().loadController("/....*.fxml");
-
     }
 
     public FXComboBoxBuilder withRegisterForRefreshOnAction(final FXControl lControl) {
