@@ -1,7 +1,6 @@
 package eu.kunas.pm4j.fx;
 
 import eu.kunas.pm4j.core.PmCommandImpl;
-import eu.kunas.pm4j.fx.base.FXControl;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;

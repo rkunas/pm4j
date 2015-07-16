@@ -2,11 +2,9 @@ package eu.kunas.pm4j.fx;
 
 import eu.kunas.pm4j.core.PmAttrImpl;
 import eu.kunas.pm4j.core.PmOption;
-import eu.kunas.pm4j.fx.base.FXControl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.util.Callback;

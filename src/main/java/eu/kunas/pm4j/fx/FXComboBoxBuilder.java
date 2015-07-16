@@ -1,8 +1,6 @@
 package eu.kunas.pm4j.fx;
 
 
-import eu.kunas.pm4j.fx.base.FXBuilder;
-import eu.kunas.pm4j.fx.base.FXControl;
 import eu.kunas.pm4j.utils.Loader;
 
 /**
@@ -14,8 +12,8 @@ public class FXComboBoxBuilder extends FXBuilder<FXComboBoxBuilder, FXComboBox> 
 
     }
 
-    public FXComboBoxBuilder withRegisterOnAction(final FXControl lControl) {
-        this.control.registerOnActionRefresh(lControl);
+    public FXComboBoxBuilder withRegisterForRefreshOnAction(final FXControl lControl) {
+        this.control.registerRefreshOnAction(lControl);
         return this;
     }
 }

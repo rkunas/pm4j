@@ -1,7 +1,5 @@
 package eu.kunas.pm4j.fx;
 
-import eu.kunas.pm4j.fx.base.FXBuilder;
-import eu.kunas.pm4j.fx.base.FXControl;
 import eu.kunas.pm4j.utils.Loader;
 
 /**

@@ -1,4 +1,4 @@
-package eu.kunas.pm4j.fx.base;
+package eu.kunas.pm4j.fx;
 
 import eu.kunas.pm4j.core.PmImpl;
 
