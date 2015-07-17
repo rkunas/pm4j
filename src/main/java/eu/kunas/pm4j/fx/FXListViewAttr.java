@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 
 /**
@@ -42,5 +43,20 @@ public class FXListViewAttr extends FXControl<PmAttrImpl>{
         });
 
         listView.setItems(data);
+    }
+
+
+    @FXML
+    void onMouseClicked(MouseEvent event) {
+        onAction();
+    }
+
+    public void onAction(){
+        PmOption selected = listView.getSelectionModel().getSelectedItem();
+        if(selected != null){
+            pm.setValue(selected.getValue());
+        }
+
+        refreshRegisteredOnAction();
     }
 }

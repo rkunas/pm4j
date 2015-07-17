@@ -25,27 +25,9 @@ public class FXButton extends FXControl<PmCommandImpl> implements Initializable 
 
     }
 
-    protected void registerOnActionRefresh(final FXControl control) {
-        if (this.doItControls == null) {
-            this.doItControls = new ArrayList<>();
-        }
-        if (control != null) {
-            this.doItControls.add(control);
-        }
-    }
-
     public void refresh(){
         this.button.setText(this.pm.getTitle());
         this.button.setDisable(!this.pm.getEnabled());
-    }
-
-    private void onActionRefresh() {
-
-        if (this.doItControls != null) {
-            for (final FXControl control : this.doItControls) {
-                control.refresh();
-            }
-        }
     }
 
     @FXML
@@ -56,7 +38,7 @@ public class FXButton extends FXControl<PmCommandImpl> implements Initializable 
         this.refresh();
 
         // Andere Refreshen
-        onActionRefresh();
+        refreshRegisteredOnAction();
     }
 
 }

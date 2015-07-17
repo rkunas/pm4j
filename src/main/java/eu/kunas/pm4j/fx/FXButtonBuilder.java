@@ -12,12 +12,12 @@ public class FXButtonBuilder extends FXBuilder<FXButtonBuilder,FXButton> {
     }
 
     public FXButtonBuilder withRegisterOnAction(final FXControl lControl) {
-        this.control.registerOnActionRefresh(lControl);
+        this.control.registerRefreshOnAction(lControl);
         return this;
     }
 
     public FXButtonBuilder withRegisterSelfOnAction() {
-        this.control.registerOnActionRefresh(this.control);
+        this.control.registerRefreshOnAction(this.control);
         return this;
     }
 }
