@@ -10,4 +10,9 @@ public class FXListViewAttrBuilder extends FXBuilder<FXListViewAttrBuilder, FXLi
     public FXListViewAttrBuilder(){
         this.control = new Loader<FXListViewAttr>().loadController("/eu/....");
     }
+
+    public FXListViewAttrBuilder withRegisterOnAction(final FXControl lControl) {
+        this.control.registerRefreshOnAction(lControl);
+        return this;
+    }
 }
