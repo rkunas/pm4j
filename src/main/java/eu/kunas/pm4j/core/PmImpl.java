@@ -78,11 +78,19 @@ public class PmImpl<T_PM_PARENT> implements Serializable {
         this.valid = valid;
     }
 
-    public Boolean getEnabled() {
+    public Boolean getEnabledImpl(){
+        return null;
+    }
+
+    public final Boolean getEnabled() {
+        Boolean enabledFromImpl = getEnabledImpl();
+        if(enabledFromImpl != null){
+            enabled = enabledFromImpl;
+        }
         return enabled;
     }
 
-    public void setEnabled(Boolean enabled) {
+    public final void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 
