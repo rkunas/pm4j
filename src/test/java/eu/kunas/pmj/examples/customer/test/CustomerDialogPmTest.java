@@ -10,7 +10,7 @@ import org.junit.experimental.categories.Category;
 /**
  * Created by Kunas on 14.07.2015.
  */
-@Category(DefaultTests.class)
+@Category({DefaultTests.class})
 public class CustomerDialogPmTest {
 
     private CustomerDialogPm customerDialogPm = new CustomerDialogPm();

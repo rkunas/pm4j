@@ -12,7 +12,7 @@ import org.junit.experimental.categories.Category;
 /**
  * Created by Kunas on 03.07.2015.
  */
-@Category(DefaultTests.class)
+@Category({DefaultTests.class})
 public class CustomerDetailPmTest {
 
     private CustomerDetailPm customerDetailPm;

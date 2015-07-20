@@ -7,6 +7,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.testfx.framework.junit.ApplicationTest;
@@ -14,7 +15,6 @@ import org.testfx.framework.junit.ApplicationTest;
 /**
  * Created by Kunas on 14.07.2015.
  */
-@Category(UserInterfaceTests.class)
 public class FxTest extends ApplicationTest {
 
     CustomerDialogPm customerDialogPm = new CustomerDialogPm();
@@ -32,6 +32,8 @@ public class FxTest extends ApplicationTest {
     }
 
     @Test
+    @Ignore
+    @Category({UserInterfaceTests.class})
     public void isButtonThere() throws Exception {
 
         clickOn("#button",MouseButton.PRIMARY);
