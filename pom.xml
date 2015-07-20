@@ -32,9 +32,7 @@
         </profile>
         <profile>
             <id>userInterfaceTests</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+
             <build>
                 <plugins>
                     <plugin>
