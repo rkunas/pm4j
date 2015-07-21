@@ -2,6 +2,9 @@ package eu.kunas.pm4j.core;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Diese klasse stellt ein minimales pm dar.
@@ -13,7 +16,7 @@ import java.io.Serializable;
  * <p>
  * Created by ramazan on 24.10.14.
  */
-public class PmImpl<T_PM_PARENT> implements Serializable {
+public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
 
     //Drückt aus ob ein pm gültig ist
     private Boolean valid = Boolean.TRUE;
@@ -28,8 +31,22 @@ public class PmImpl<T_PM_PARENT> implements Serializable {
     // Eltern Element
     private T_PM_PARENT pmParent;
 
+    // Liste der Kind Pms
+    protected List<PmImpl> childs = new ArrayList<>(0);
+
     public PmImpl(T_PM_PARENT parent) {
         this.pmParent = parent;
+        this.addThisAsChildToParent(parent,this);
+
+    }
+
+    /**
+     * Fügt diese instanz in die Liste der Childs im Parent Objekt hinzu
+     * @param parent
+     * @param child
+     */
+    protected void addThisAsChildToParent(PmImpl parent, PmImpl child){
+        parent.childs.add(child);
     }
 
     public PmImpl() {

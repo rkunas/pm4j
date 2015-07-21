@@ -6,7 +6,7 @@ package eu.kunas.pm4j.core;
  *
  * Created by Kunas on 07.07.2015.
  */
-public class PmPage<T_PM_PARENT> extends PmImpl<T_PM_PARENT> {
+public class PmPage<T_PM_PARENT extends PmImpl> extends PmImpl<T_PM_PARENT> {
 
     public PmPage(T_PM_PARENT parent) {
         super(parent);

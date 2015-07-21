@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * Created by ramazan on 03.11.14.
  */
-public abstract class PmCommandImpl<T_PM_PARENT> extends PmImpl<T_PM_PARENT> implements Serializable {
+public abstract class PmCommandImpl<T_PM_PARENT extends PmImpl> extends PmImpl<T_PM_PARENT> implements Serializable {
 
     private static Log log = LogFactory.getLog(PmCommandImpl.class);
 

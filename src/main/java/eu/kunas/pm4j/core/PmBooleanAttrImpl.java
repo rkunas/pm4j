@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by kunasra on 26.01.15.
  */
-public class PmBooleanAttrImpl<T_PM_PARENT> extends PmAttrImpl<T_PM_PARENT, Boolean> implements Serializable {
+public class PmBooleanAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T_PM_PARENT, Boolean> implements Serializable {
     public PmBooleanAttrImpl(T_PM_PARENT parent) {
         super(parent);
     }

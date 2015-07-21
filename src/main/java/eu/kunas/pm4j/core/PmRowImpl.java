@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * Created by ramazan on 24.10.14.
  */
-public class PmRowImpl<T_PARENT, T_PM_BEAN> extends PmBeanImpl<T_PARENT, T_PM_BEAN> implements Serializable {
+public class PmRowImpl<T_PARENT extends PmImpl, T_PM_BEAN> extends PmBeanImpl<T_PARENT, T_PM_BEAN> implements Serializable {
 
     private Long rowId;
 

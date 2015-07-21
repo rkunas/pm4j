@@ -14,7 +14,7 @@ import java.io.Serializable;
  * <p/>
  * Created by ramazan on 23.10.14
  */
-public abstract class PmBeanImpl<T_PM_PARENT, T_PM_BEAN> extends PmImpl<T_PM_PARENT> implements Serializable {
+public abstract class PmBeanImpl<T_PM_PARENT extends PmImpl, T_PM_BEAN> extends PmImpl<T_PM_PARENT> implements Serializable {
 
     protected T_PM_BEAN pmBean;
 

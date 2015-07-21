@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by ramazan on 02.11.14.
  */
-public class PmAttrImpl<T_PM_PARENT, T_PM_BEAN extends Object> extends PmImpl<T_PM_PARENT> implements Serializable {
+public class PmAttrImpl<T_PM_PARENT extends PmImpl, T_PM_BEAN extends Object> extends PmImpl<T_PM_PARENT> implements Serializable {
 
     protected static Log log = LogFactory.getLog(PmAttrImpl.class);
     protected Boolean changed = Boolean.FALSE;
@@ -55,27 +55,6 @@ public class PmAttrImpl<T_PM_PARENT, T_PM_BEAN extends Object> extends PmImpl<T_
     }
 
     /**
-     * Das ist eine spezialmethode um die PmOptions in ein SelectItem zu convertieren
-     * @return
-     */
-    /** public final SelectItem[] getJsfOptions() {
-
-     // TODO: Evt eine Utility bauen um die PmOption Liste Erstellung was zu vereinfachen
-     List<PmOption> pmOptionList = getPmOptions();
-
-     List<SelectItem> selectItemList = new ArrayList<SelectItem>();
-
-     for (PmOption pmOption : pmOptionList) {
-     SelectItem item = new SelectItem(pmOption.getValue(), pmOption.getLabel());
-     selectItemList.add(item);
-     }
-
-     // Sortierung evt brauchbar auch zum einschalten und auschalten
-     SortUtil.resortSelectItemsByLabel(selectItemList);
-     return selectItemList.toArray(new SelectItem[selectItemList.size()]);
-     } **/
-
-    /**
      * Liefert eine leere liste falls es nicht überschrieben wird
      *
      * @return
@@ -85,6 +64,9 @@ public class PmAttrImpl<T_PM_PARENT, T_PM_BEAN extends Object> extends PmImpl<T_
     }
 
     public Boolean getChanged() {
+
+
+
         return changed;
     }
 

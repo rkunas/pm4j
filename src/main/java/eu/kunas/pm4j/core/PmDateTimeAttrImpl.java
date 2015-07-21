@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * Created by ramazan on 20.11.14.
  */
-public class PmDateTimeAttrImpl<T_PM_PARENT> extends PmAttrImpl<T_PM_PARENT, DateTime> implements Serializable {
+public class PmDateTimeAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T_PM_PARENT, DateTime> implements Serializable {
 
     private DateTimeFormatter formatter = DateTimeFormat.forPattern("HH:mm:ss MM.dd.yyy");
     private String stringValue;

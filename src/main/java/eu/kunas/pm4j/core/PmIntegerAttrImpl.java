@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by kunasra on 26.11.14.
  */
-public class PmIntegerAttrImpl<T_PM_PARENT> extends PmAttrImpl<T_PM_PARENT, Integer> implements Serializable {
+public class PmIntegerAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T_PM_PARENT, Integer> implements Serializable {
 
     public PmIntegerAttrImpl(T_PM_PARENT parent) {
         super(parent);
