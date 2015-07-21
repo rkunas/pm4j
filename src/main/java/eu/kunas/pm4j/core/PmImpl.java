@@ -1,7 +1,12 @@
 package eu.kunas.pm4j.core;
 
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.io.Serializable;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,6 +22,8 @@ import java.util.List;
  * Created by ramazan on 24.10.14.
  */
 public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
+
+    protected static Log log = LogFactory.getLog(PmImpl.class);
 
     //Drückt aus ob ein pm gültig ist
     private Boolean valid = Boolean.TRUE;
@@ -36,16 +43,16 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
 
     public PmImpl(T_PM_PARENT parent) {
         this.pmParent = parent;
-        this.addThisAsChildToParent(parent,this);
-
+        this.addThisAsChildToParent(parent, this);
     }
 
     /**
      * Fügt diese instanz in die Liste der Childs im Parent Objekt hinzu
+     *
      * @param parent
      * @param child
      */
-    protected void addThisAsChildToParent(PmImpl parent, PmImpl child){
+    protected void addThisAsChildToParent(PmImpl parent, PmImpl child) {
         parent.childs.add(child);
     }
 
@@ -95,13 +102,13 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
         this.valid = valid;
     }
 
-    public Boolean getEnabledImpl(){
+    public Boolean getEnabledImpl() {
         return null;
     }
 
     public final Boolean getEnabled() {
         Boolean enabledFromImpl = getEnabledImpl();
-        if(enabledFromImpl != null){
+        if (enabledFromImpl != null) {
             enabled = enabledFromImpl;
         }
         return enabled;

@@ -55,6 +55,7 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm,CustomerDto> {
 
     }
 
+    @PmTitle("Save")
     public final PmCommandImpl<CustomerDetailPm> saveCommand = new PmCommandImpl<CustomerDetailPm>(this){
         @Override
         protected void doItImpl() {
