@@ -60,8 +60,16 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
 
     }
 
-    public Boolean getRequired() {
+    public final Boolean getRequired() {
+        Boolean returnOfRequiredImpl = getRequiredImpl();
+        if(returnOfRequiredImpl != null){
+            required = returnOfRequiredImpl;
+        }
         return required;
+    }
+
+    public Boolean getRequiredImpl(){
+        return null;
     }
 
     public void setRequired(Boolean required) {

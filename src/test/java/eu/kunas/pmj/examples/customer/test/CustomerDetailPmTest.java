@@ -83,4 +83,13 @@ public class CustomerDetailPmTest {
         System.out.println(customerDetailPm.getPmBean().getFirstName());
         System.out.println(customerDetailPm.firstName.getValue());
     }
+
+    @Test
+    public void testChangedAttribute() {
+        customerDetailPm.loadCommand.doIt();
+        customerDetailPm.firstName.setValue("Marcus");
+
+        Assert.assertTrue(customerDetailPm.firstName.getChanged());
+
+    }
 }

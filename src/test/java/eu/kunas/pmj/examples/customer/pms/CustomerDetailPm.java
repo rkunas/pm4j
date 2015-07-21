@@ -33,7 +33,7 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm,CustomerDto> {
 
     public final PmStringAttrImpl<CustomerDetailPm> firstName = new PmStringAttrImpl<CustomerDetailPm>(this){
         @Override
-        public Boolean getRequired() {
+        public Boolean getRequiredImpl() {
             return true;
         }
 
@@ -42,7 +42,7 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm,CustomerDto> {
 
     public final PmStringAttrImpl<CustomerDetailPm> lastName = new PmStringAttrImpl<CustomerDetailPm>(this){
         @Override
-        public Boolean getRequired() {
+        public Boolean getRequiredImpl() {
             return true;
         }
     };
@@ -69,6 +69,11 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm,CustomerDto> {
             lastName.validate();
 
             return firstName.getValid() && lastName.getValid();
+        }
+
+        @Override
+        public Boolean getEnabledImpl() {
+            return Boolean.TRUE;
         }
 
         @Override
