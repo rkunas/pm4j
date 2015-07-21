@@ -32,23 +32,26 @@ public class PmAttrImpl<T_PM_PARENT extends PmImpl, T_PM_BEAN extends Object> ex
     }
 
     public Class getPmAttrType() {
-        Type c1 = null;
+        Type pmType = null;
 
-        c1 = getClass().getGenericSuperclass();
+        pmType = getClass().getGenericSuperclass();
 
-        if (!c1.getTypeName().startsWith(PmAttrImpl.class.getCanonicalName())) {
-            c1 = getClass().getSuperclass().getGenericSuperclass();
+        if (!pmType.getTypeName().startsWith(PmAttrImpl.class.getCanonicalName())) {
+            pmType = getClass().getSuperclass().getGenericSuperclass();
         }
 
-        ParameterizedType c2 = (ParameterizedType) c1;
+        ParameterizedType pmParameterizedType = (ParameterizedType) pmType;
 
         Class beanClassofPm = null;
 
-        if (c2.getActualTypeArguments().length == 2) {
-            beanClassofPm = (Class) c2.getActualTypeArguments()[1];
+        // Identify Bean Class,
+        // PmStringAttrImpl is String,
+        // There can be several numbers of Argument types, but the last one is the bean value type
+        if (pmParameterizedType.getActualTypeArguments().length == 2) {
+            beanClassofPm = (Class) pmParameterizedType.getActualTypeArguments()[1];
         }
-        if (c2.getActualTypeArguments().length == 1) {
-            beanClassofPm = (Class) c2.getActualTypeArguments()[0];
+        if (pmParameterizedType.getActualTypeArguments().length == 1) {
+            beanClassofPm = (Class) pmParameterizedType.getActualTypeArguments()[0];
         }
 
         return beanClassofPm;
