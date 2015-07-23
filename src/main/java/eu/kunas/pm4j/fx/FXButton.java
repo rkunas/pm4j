@@ -18,8 +18,6 @@ public class FXButton extends FXControl<PmCommandImpl> implements Initializable 
     @FXML
     public Button button;
 
-    private List<FXControl> doItControls = null;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
