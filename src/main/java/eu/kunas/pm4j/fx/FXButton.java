@@ -23,6 +23,7 @@ public class FXButton extends FXControl<PmCommandImpl> implements Initializable 
 
     }
 
+    @Override
     public void refresh(){
         this.button.setText(this.pm.getTitle());
         this.button.setDisable(!this.pm.getEnabled());
