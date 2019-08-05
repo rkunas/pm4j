@@ -2,4 +2,5 @@
 language: java
 jdk:
   - openjdk8
+install: true
 script: pm4j-pm/mvn install emma:emma
