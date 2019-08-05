@@ -1,11 +1,9 @@
 package eu.kunas.pmj.examples.customer.test;
 
 import eu.kunas.pmj.examples.DefaultTests;
-import eu.kunas.pmj.examples.UserInterfaceTests;
 import eu.kunas.pmj.examples.customer.pms.CustomerDetailPm;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 

@@ -1,7 +1,6 @@
 package eu.kunas.pmj.examples.customer.test;
 
 import eu.kunas.pmj.examples.DefaultTests;
-import eu.kunas.pmj.examples.UserInterfaceTests;
 import eu.kunas.pmj.examples.customer.pms.CustomerDialogPm;
 import org.junit.Before;
 import org.junit.Test;
