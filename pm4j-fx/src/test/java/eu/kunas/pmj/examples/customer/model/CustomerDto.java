@@ -2,6 +2,7 @@ package eu.kunas.pmj.examples.customer.model;
 
 import java.io.Serializable;
 
+@SuppressWarnings("MagicConstant")
 public class CustomerDto implements Serializable {
 
     private Integer age;
