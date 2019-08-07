@@ -1,5 +1,6 @@
 package eu.kunas.pmj.examples.customer.pms;
 
+import com.hiraas.pm4j.core.*;
 import eu.kunas.pmj.examples.customer.service.CustomerService;
 
 import java.util.ArrayList;
