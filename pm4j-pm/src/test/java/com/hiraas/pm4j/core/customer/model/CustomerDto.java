@@ -11,6 +11,11 @@ public class CustomerDto implements Serializable {
     private String firstName;
     private String lastName;
 
+    public CustomerDto(String firstname, String lastname){
+        this.firstName = firstname;
+        this.lastName = lastname;
+    }
+
     public CustomerDto(){
 
     }

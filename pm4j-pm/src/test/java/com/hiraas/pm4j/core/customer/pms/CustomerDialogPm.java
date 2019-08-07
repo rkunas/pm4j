@@ -3,7 +3,8 @@ package com.hiraas.pm4j.core.customer.pms;
 import com.hiraas.pm4j.core.PmArrayList;
 import com.hiraas.pm4j.core.PmCommandImpl;
 import com.hiraas.pm4j.core.PmImpl;
-import eu.kunas.pmj.examples.customer.service.CustomerService;
+import com.hiraas.pm4j.core.customer.model.CustomerDto;
+import com.hiraas.pm4j.core.customer.service.CustomerService;
 
 /**
  * Created by Kunas on 14.07.2015.

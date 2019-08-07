@@ -1,7 +1,8 @@
 package com.hiraas.pm4j.core.customer.pms;
 
 import com.hiraas.pm4j.core.*;
-import eu.kunas.pmj.examples.customer.service.CustomerService;
+import com.hiraas.pm4j.core.customer.model.CustomerDto;
+import com.hiraas.pm4j.core.customer.service.CustomerService;
 
 import java.util.ArrayList;
 import java.util.List;
