@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:o="http://omnifaces.org/ui"
+	xmlns:of="http://omnifaces.org/functions">
+
+<h:head>
+	<title>PM4J Primefaces</title>
+</h:head>
+
+<h:body>
+	<p:outputPanel style="display:block">
+		<h3 style="text-align: center">PM4J Primefaces</h3>
+
+		<p:tabView dynamic="true">
+			<p:tab title="Search">
+				<h:panelGrid columns="1">
+					<h:form>
+					<p:dataTable var="rowPm" widgetVar="customerTable" id="customerTable" value="#{sampleBean.customerDialogPm.customers}">
+						<p:column headerText="Id">
+							<h:outputText value="#{rowPm.firstName.value}" />
+						</p:column>
+					</p:dataTable>
+					<p:commandButton value="Search" update="customerTable" action="#{sampleBean.customerDialogPm.searchCommandPm.doIt()}"/>
+					</h:form>
+				</h:panelGrid>
+
+			</p:tab>
+			<p:tab title="Detail">
+
+			</p:tab>
+		</p:tabView>
+	</p:outputPanel>
+</h:body>
+</html>
