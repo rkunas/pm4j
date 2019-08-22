@@ -5,8 +5,12 @@ import com.hiraas.pm4j.core.PmCommandImpl;
 import com.hiraas.pm4j.core.PmImpl;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class CustomerDialogPm extends PmImpl {
+
+    private CustomerService service = new CustomerService();
 
     public PmArrayList<CustomerRowPm> customers = new PmArrayList<CustomerRowPm>();
 
@@ -14,9 +18,13 @@ public class CustomerDialogPm extends PmImpl {
         @Override
         protected void doItImpl() {
 
-            CustomerRowPm row1 = new CustomerRowPm(CustomerDialogPm.this);
-            row1.setPmBean(new CustomerDto("Hira"));
-            customers.add(row1);
+            List<CustomerDto> result = service.searchCustomer("e");
+            customers.clear();
+
+            result.stream().forEach(customer -> {
+                CustomerRowPm row = new CustomerRowPm(CustomerDialogPm.this, customer);
+                customers.add(row);
+            });
         }
     };
 

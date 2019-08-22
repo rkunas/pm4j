@@ -12,8 +12,9 @@ public class CustomerRowPm extends PmRowImpl<CustomerDialogPm, CustomerDto> {
     public PmStringAttrImpl firstName = new PmStringAttrImpl(this);
 
 
-    public CustomerRowPm(CustomerDialogPm parent){
+    public CustomerRowPm(CustomerDialogPm parent, CustomerDto dto){
         super(parent);
+        setPmBean(dto);
     }
 
 }
