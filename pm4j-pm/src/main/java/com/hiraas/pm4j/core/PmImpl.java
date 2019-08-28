@@ -131,7 +131,7 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
         this.visible = visible;
     }
 
-    public T_PM_PARENT getPmParent() {
+    protected T_PM_PARENT getPmParent() {
         return pmParent;
     }
 }
