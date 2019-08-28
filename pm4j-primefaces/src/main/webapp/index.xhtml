@@ -36,7 +36,7 @@
 
 
 						<p:column>
-							<p:commandButton oncomplete="PF('tabs').select(1)" process="@all"  icon="pi pi-search" value="View" action="#{sampleBean.customerDialogPm.viewDetail.doIt()}">
+							<p:commandButton oncomplete="PF('tabs').select(1)" process="@all"  icon="pi pi-search" value="View" action="#{sampleBean.customerDialogPm.viewDetailCommandPm.doIt()}">
 								<f:setPropertyActionListener value="#{rowPm}" target="#{sampleBean.customerDialogPm.selectedRow}" />
 							</p:commandButton>
 						</p:column>

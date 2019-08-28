@@ -30,10 +30,9 @@ public class CustomerDialogPm extends PmImpl {
         }
     };
 
-    public PmCommandImpl<CustomerDialogPm> viewDetail = new PmCommandImpl<CustomerDialogPm>(this) {
+    public PmCommandImpl<CustomerDialogPm> viewDetailCommandPm = new PmCommandImpl<CustomerDialogPm>(this) {
         @Override
         protected void doItImpl() {
-            System.out.println("Setting " + selectedRow.getPmBean().getLastName());
             customerDetailPm.setPmBean(selectedRow.getPmBean());
         }
     };
