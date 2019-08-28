@@ -21,12 +21,23 @@ public class RestFullController {
         return ResponseEntity.ok(dialogPm);
     }
 
-    @GetMapping("/**")
+    @GetMapping("/url/**")
     public ResponseEntity getWild(final HttpServletRequest request) {
 
         String path = (String) request.getAttribute(
                 HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE);
-        return ResponseEntity.ok(path);
+        return ResponseEntity.ok(dialogPm.customerDetailPm.lastName.getEnabled());
     }
+
+
+    @GetMapping("/tuwas/**")
+    public ResponseEntity getTuwas(final HttpServletRequest request) {
+
+        dialogPm.searchText.setValue("e");
+        dialogPm.searchCommandPm.doIt();
+        return ResponseEntity.ok(dialogPm);
+    }
+
+
 
 }
