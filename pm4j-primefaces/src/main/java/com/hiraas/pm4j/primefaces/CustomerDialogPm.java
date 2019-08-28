@@ -22,9 +22,6 @@ public class CustomerDialogPm extends PmImpl {
 
             List<CustomerDto> result = service.searchCustomer(searchText.getValue());
             customers.clear();
-            customers.reset();
-
-            System.out.println(searchText.getValue());
 
             result.stream().forEach(customer -> {
                 CustomerRowPm row = new CustomerRowPm(CustomerDialogPm.this, customer);
