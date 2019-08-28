@@ -1,22 +1,20 @@
 package com.hiraas.pm4j.primefaces;
 
-import com.hiraas.pm4j.core.PmRowImpl;
+import com.hiraas.pm4j.core.PmBeanImpl;
 import com.hiraas.pm4j.core.PmStringAttrImpl;
 import lombok.Data;
 
 @Data
-public class CustomerRowPm extends PmRowImpl<CustomerDialogPm, CustomerDto> {
+public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm, CustomerDto> {
 
     public PmStringAttrImpl firstName = new PmStringAttrImpl(this);
 
     public PmStringAttrImpl lastName = new PmStringAttrImpl(this);
 
-
-    public CustomerRowPm(CustomerDialogPm parent, CustomerDto dto) {
+    public CustomerDetailPm(CustomerDialogPm parent){
         super(parent);
-        if(dto!= null) {
-            setPmBean(dto);
-        }
+
     }
+
 
 }

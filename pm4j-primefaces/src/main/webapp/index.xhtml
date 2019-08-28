@@ -11,25 +11,54 @@
 <h:body>
 	<p:outputPanel style="display:block">
 		<h3 style="text-align: center">PM4J Primefaces</h3>
-
-		<p:tabView dynamic="true">
-			<p:tab title="Search">
+		<h:form>
+		<p:tabView dynamic="true" widgetVar="tabs" id="tabs" cache="false">
+			<p:tab title="Search" >
 				<h:panelGrid columns="1">
-					<h:form>
-					<p:dataTable var="rowPm" widgetVar="customerTable" id="customerTable" value="#{sampleBean.customerDialogPm.customers}">
+
+						<p:inputText id="searchText" widgetVar="searchText" value="#{sampleBean.customerDialogPm.searchText.value}">
+							<p:ajax event="keyup" />
+						</p:inputText>
+						<p:commandButton value="Search"  process="@this" update="customerTable" action="#{sampleBean.customerDialogPm.searchCommandPm.doIt()}"/>
+
+					<p:dataTable var="rowPm" value="#{sampleBean.customerDialogPm.customers}" widgetVar="customerTable"  id="customerTable">
+
+						<f:facet name="header">
+							Customers
+						</f:facet>
 						<p:column headerText="First Name">
 							<h:outputText value="#{rowPm.firstName.value}" />
 						</p:column>
+						<p:column headerText="Last Name">
+							<h:outputText value="#{rowPm.lastName.value}" />
+						</p:column>
+
+
+
+						<p:column>
+							<p:commandButton oncomplete="PF('tabs').select(1)" process="@all"  icon="pi pi-search" value="View" action="#{sampleBean.customerDialogPm.viewDetail.doIt()}">
+								<f:setPropertyActionListener value="#{rowPm}" target="#{sampleBean.customerDialogPm.selectedRow}" />
+							</p:commandButton>
+						</p:column>
+
+
+
 					</p:dataTable>
-					<p:commandButton value="Search" update="customerTable" action="#{sampleBean.customerDialogPm.searchCommandPm.doIt()}"/>
-					</h:form>
 				</h:panelGrid>
 
 			</p:tab>
-			<p:tab title="Detail">
+			<p:tab  title="Detail" >
+				<p:outputPanel id="detail">
+				<p:panelGrid columns="1">
 
+				<h:outputText value="#{sampleBean.customerDialogPm.customerDetailPm.firstName.value}" />
+
+				<h:outputText value="#{sampleBean.customerDialogPm.customerDetailPm.lastName.value}" />
+				</p:panelGrid>
+				</p:outputPanel>
 			</p:tab>
 		</p:tabView>
+		</h:form>
 	</p:outputPanel>
 </h:body>
 </html>

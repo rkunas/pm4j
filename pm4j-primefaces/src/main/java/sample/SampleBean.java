@@ -1,22 +1,25 @@
 package sample;
 
 import com.hiraas.pm4j.primefaces.CustomerDialogPm;
+import com.hiraas.pm4j.primefaces.CustomerRowPm;
 import lombok.Data;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.Serializable;
 
 @Named
-@RequestScoped
+@ApplicationScoped
 @Data
-public class SampleBean {
+public class SampleBean implements Serializable {
 
     private CustomerDialogPm customerDialogPm = new CustomerDialogPm();
 
     @Inject
     @ConfigProperty(name = "version")
     private String version;
+
 
 }
