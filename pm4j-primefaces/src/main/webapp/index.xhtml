@@ -1,64 +1,65 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui" xmlns:o="http://omnifaces.org/ui"
-	xmlns:of="http://omnifaces.org/functions">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+>
 
 <h:head>
-	<title>PM4J Primefaces</title>
+    <title>PM4J Primefaces</title>
 </h:head>
 
 <h:body>
-	<p:outputPanel style="display:block">
-		<h3 style="text-align: center">PM4J Primefaces</h3>
-		<h:form>
-		<p:tabView dynamic="true" widgetVar="tabs" id="tabs" cache="false">
-			<p:tab title="Search" >
-				<h:panelGrid columns="1">
+    <p:outputPanel style="display:block">
+        <h3 style="text-align: center">PM4J Primefaces</h3>
+        <h:form>
+            <p:tabView dynamic="true" widgetVar="tabs" id="tabs" cache="false">
+                <p:tab title="Search">
+                    <h:panelGrid columns="1">
 
-						<p:inputText id="searchText" widgetVar="searchText" value="#{sampleBean.customerDialogPm.searchText.value}">
-							<p:ajax event="keyup" />
-						</p:inputText>
-						<p:commandButton value="Search"  process="@this" update="customerTable" action="#{sampleBean.customerDialogPm.searchCommandPm.doIt()}"/>
+                        <p:inputText id="searchText" widgetVar="searchText"
+                                     value="#{sampleBean.customerDialogPm.searchText.value}">
+                            <p:ajax event="keyup"/>
+                        </p:inputText>
+                        <p:commandButton value="Search" process="@this" update="customerTable"
+                                         action="#{sampleBean.customerDialogPm.searchCommandPm.doIt()}"/>
 
-					<p:dataTable var="rowPm" value="#{sampleBean.customerDialogPm.customers}" widgetVar="customerTable"  id="customerTable">
+                        <p:dataTable var="rowPm" value="#{sampleBean.customerDialogPm.customers}"
+                                     widgetVar="customerTable" id="customerTable">
 
-						<f:facet name="header">
-							Customers
-						</f:facet>
-						<p:column headerText="First Name">
-							<h:outputText value="#{rowPm.firstName.value}" />
-						</p:column>
-						<p:column headerText="Last Name">
-							<h:outputText value="#{rowPm.lastName.value}" />
-						</p:column>
+                            <f:facet name="header">
+                                Customers
+                            </f:facet>
+                            <p:column headerText="First Name">
+                                <h:outputText value="#{rowPm.firstName.value}"/>
+                            </p:column>
+                            <p:column headerText="Last Name">
+                                <h:outputText value="#{rowPm.lastName.value}"/>
+                            </p:column>
 
+                            <p:column>
+                                <p:commandButton oncomplete="PF('tabs').select(1)" process="@all" icon="pi pi-search"
+                                                 value="View"
+                                                 action="#{sampleBean.customerDialogPm.viewDetailCommandPm.doIt()}">
+                                    <f:setPropertyActionListener value="#{rowPm}"
+                                                                 target="#{sampleBean.customerDialogPm.selectedRow}"/>
+                                </p:commandButton>
+                            </p:column>
+                        </p:dataTable>
+                    </h:panelGrid>
 
+                </p:tab>
+                <p:tab title="Detail">
+                    <p:outputPanel id="detail">
+                        <p:panelGrid columns="1">
 
-						<p:column>
-							<p:commandButton oncomplete="PF('tabs').select(1)" process="@all"  icon="pi pi-search" value="View" action="#{sampleBean.customerDialogPm.viewDetailCommandPm.doIt()}">
-								<f:setPropertyActionListener value="#{rowPm}" target="#{sampleBean.customerDialogPm.selectedRow}" />
-							</p:commandButton>
-						</p:column>
+                            <h:outputText value="#{sampleBean.customerDialogPm.customerDetailPm.firstName.value}"/>
 
-
-
-					</p:dataTable>
-				</h:panelGrid>
-
-			</p:tab>
-			<p:tab  title="Detail" >
-				<p:outputPanel id="detail">
-				<p:panelGrid columns="1">
-
-				<h:outputText value="#{sampleBean.customerDialogPm.customerDetailPm.firstName.value}" />
-
-				<h:outputText value="#{sampleBean.customerDialogPm.customerDetailPm.lastName.value}" />
-				</p:panelGrid>
-				</p:outputPanel>
-			</p:tab>
-		</p:tabView>
-		</h:form>
-	</p:outputPanel>
+                            <h:outputText value="#{sampleBean.customerDialogPm.customerDetailPm.lastName.value}"/>
+                        </p:panelGrid>
+                    </p:outputPanel>
+                </p:tab>
+            </p:tabView>
+        </h:form>
+    </p:outputPanel>
 </h:body>
 </html>
