@@ -15,6 +15,5 @@ public class CustomerDialogPmTest {
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.hiraav.com");
 
-        System.out.println(driver.getPageSource());
     }
 }
