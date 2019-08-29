@@ -6,6 +6,7 @@ import org.apache.commons.logging.LogFactory;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -59,13 +60,13 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
 
     public final Boolean getRequired() {
         Boolean returnOfRequiredImpl = getRequiredImpl();
-        if(returnOfRequiredImpl != null){
+        if (returnOfRequiredImpl != null) {
             required = returnOfRequiredImpl;
         }
         return required;
     }
 
-    public Boolean getRequiredImpl(){
+    public Boolean getRequiredImpl() {
         return null;
     }
 
@@ -74,6 +75,8 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
     }
 
     public String getTitle() {
+        // der Title wird gesetzt wenn vorhanden
+        new PmTitleAnnotationUtil().invoke();
         return title;
     }
 
@@ -133,5 +136,37 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
 
     protected T_PM_PARENT getPmParent() {
         return pmParent;
+    }
+
+    /**
+     * Sucht nach einer PmTitle Annotation und setzt den Title
+     */
+    private class PmTitleAnnotationUtil {
+        public void invoke() {
+
+            if (pmParent == null) {
+                return;
+            }
+
+            Arrays.stream(pmParent.getClass().getDeclaredFields()).forEach(field -> {
+
+                if (!field.isAnnotationPresent(PmTitle.class)) {
+                    return;
+                }
+
+                try {
+                    PmImpl pm = (PmImpl) field.get(getPmParent());
+                    if (pm.equals(PmImpl.this)) {
+                        PmTitle title = field.getAnnotation(PmTitle.class);
+                        PmImpl.this.title = title.value();
+                        log.info("Title set from " + field.getName() + " with " + title.value());
+                    }
+
+                } catch (IllegalAccessException exc) {
+                    log.error(exc);
+                }
+            });
+
+        }
     }
 }

@@ -1,10 +1,7 @@
 package com.hiraas.pm4j.pms;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.hiraas.pm4j.core.PmArrayList;
-import com.hiraas.pm4j.core.PmCommandImpl;
-import com.hiraas.pm4j.core.PmImpl;
-import com.hiraas.pm4j.core.PmStringAttrImpl;
+import com.hiraas.pm4j.core.*;
 import lombok.Data;
 
 import java.util.List;
@@ -17,6 +14,7 @@ public class CustomerDialogPm extends PmImpl {
 
     public PmArrayList<CustomerRowPm> customers = new PmArrayList<CustomerRowPm>();
 
+    @PmTitle("Suchen")
     public PmStringAttrImpl<CustomerDialogPm> searchText = new PmStringAttrImpl<>(this);
 
     public CustomerRowPm selectedRow = new CustomerRowPm(this,null);
