@@ -85,7 +85,7 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
     }
 
     /**
-     * Stößt irgendeine art von validierung an
+     * Stößt validierung an.
      */
     public final void validate() {
         Boolean returnOfValidateImpl = validateImpl();
