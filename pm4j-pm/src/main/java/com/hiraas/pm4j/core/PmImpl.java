@@ -159,7 +159,7 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
                     if (pm.equals(PmImpl.this)) {
                         PmTitle title = field.getAnnotation(PmTitle.class);
                         PmImpl.this.title = title.value();
-                        log.info("Title of " + field.getName() + " is " + title.value());
+                        log.info(pmParent.getClass().getSimpleName() + " - Title of " + field.getName() + " is " + title.value());
                     }
 
                 } catch (IllegalAccessException exc) {
