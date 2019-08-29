@@ -1,7 +1,6 @@
 package sample;
 
-import com.hiraas.pm4j.primefaces.CustomerDialogPm;
-import com.hiraas.pm4j.primefaces.CustomerRowPm;
+import com.hiraas.pm4j.pms.CustomerDialogPm;
 import lombok.Data;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 

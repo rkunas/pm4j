@@ -56,6 +56,11 @@
 			<artifactId>pm4j-pm</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.hiraas.pm4j</groupId>
+			<version>1.0-SNAPSHOT</version>
+			<artifactId>pm4j-pms</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>7.0</version>

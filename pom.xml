@@ -12,8 +12,10 @@
 
     <modules>
         <module>pm4j-pm</module>
+        <module>pm4j-pms</module>
         <module>pm4j-primefaces</module>
         <module>pm4j-rest</module>
+
     </modules>
 
 </project>
