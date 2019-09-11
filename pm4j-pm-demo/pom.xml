@@ -6,7 +6,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.hiraas.pm4j</groupId>
-    <artifactId>pm4j-pms</artifactId>
+    <artifactId>pm4j-pm-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>

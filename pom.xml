@@ -12,11 +12,10 @@
 
     <modules>
         <module>pm4j-pm</module>
-        <module>pm4j-pms</module>
-        <module>pm4j-primefaces</module>
-        <module>pm4j-rest</module>
+        <module>pm4j-pm-demo</module>
+        <module>pm4j-primefaces-demo</module>
+        <module>pm4j-rest-demo</module>
         <module>pm4j-fx</module>
-
     </modules>
 
 </project>

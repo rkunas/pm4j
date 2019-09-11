@@ -6,7 +6,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.hiraas.pm4j</groupId>
-    <artifactId>rest</artifactId>
+    <artifactId>pm4j-rest-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
@@ -38,7 +38,7 @@
         <dependency>
             <groupId>com.hiraas.pm4j</groupId>
             <version>1.0-SNAPSHOT</version>
-            <artifactId>pm4j-pms</artifactId>
+            <artifactId>pm4j-pm-demo</artifactId>
         </dependency>
     </dependencies>
 
