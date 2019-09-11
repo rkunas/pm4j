@@ -1,6 +1,5 @@
 package eu.kunas.pmj.examples.customer.test;
 
-import eu.kunas.pmj.examples.DefaultTests;
 import eu.kunas.pmj.examples.customer.pms.CustomerDetailPm;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,7 +9,6 @@ import org.junit.experimental.categories.Category;
 /**
  * Created by Kunas on 03.07.2015.
  */
-@Category({DefaultTests.class})
 public class CustomerDetailPmTest {
 
     private CustomerDetailPm customerDetailPm;
