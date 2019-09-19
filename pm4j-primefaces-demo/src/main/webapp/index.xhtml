@@ -2,6 +2,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
+      xmlns:s="http://sample/facelets"
 >
 
 <h:head>
@@ -51,6 +52,9 @@
                 <p:tab title="Detail">
                     <p:outputPanel id="detail">
                         <p:panelGrid columns="1">
+
+                            <s:label pm="#{sampleBean.customerDialogPm.customerDetailPm.firstName}"/>
+                            <s:label pm="#{sampleBean.customerDialogPm.customerDetailPm.lastName}"/>
 
                             <h:outputText value="#{sampleBean.customerDialogPm.customerDetailPm.firstName.value}"/>
 
