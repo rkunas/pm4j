@@ -10,7 +10,7 @@ import java.util.List;
 @JsonIgnoreProperties({"service"})
 public class CustomerDialogPm extends PmImpl {
 
-    private CustomerService service = new CustomerService();
+    public CustomerService service = new CustomerService();
 
     public PmArrayList<CustomerRowPm> customers = new PmArrayList<CustomerRowPm>();
 

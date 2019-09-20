@@ -8,4 +8,12 @@
         <tag-name>label</tag-name>
         <source>tags/sample/label.xhtml</source>
     </tag>
+    <tag>
+        <tag-name>textfield</tag-name>
+        <source>tags/sample/textfield.xtml</source>
+    </tag>
+    <tag>
+        <tag-name>button</tag-name>
+        <source>tags/sample/button.xtml</source>
+    </tag>
 </facelet-taglib>

@@ -31,4 +31,8 @@ public class CustomerService {
 
         return result;
     }
+
+    public boolean saveCustomer(CustomerDto customer){
+        return true;
+    }
 }
