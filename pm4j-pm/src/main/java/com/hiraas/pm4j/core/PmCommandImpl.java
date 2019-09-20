@@ -23,12 +23,36 @@ public abstract class PmCommandImpl<T_PM_PARENT extends PmImpl> extends PmImpl<T
         log.info(getPmParent().getClass().getSimpleName() + " - Validierung abgeschlossen");
         if (getValid()) {
             log.info(getPmParent().getClass().getSimpleName() + " - Pm Command " + getTitle() + " ist valide");
+            beforeDoIt();
             doItImpl();
+            afterDoIt();
         } else {
             log.info(getPmParent().getClass().getSimpleName() + " - Pm Command " + getTitle() + " ist nicht valide");
         }
     }
 
     protected abstract void doItImpl();
+
+    /**
+     * Zum überschreiben durch den Entwickler
+     */
+    public void afterDoItImpl() {
+
+    }
+
+    protected final void afterDoIt(){
+        afterDoItImpl();
+    }
+
+    public void beforeDoItImpl(){
+
+    }
+
+    protected final void beforeDoIt(){
+        beforeDoItImpl();
+    }
+
+
+
 
 }
