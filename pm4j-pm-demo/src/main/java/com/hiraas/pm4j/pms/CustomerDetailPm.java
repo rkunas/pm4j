@@ -21,7 +21,7 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm, CustomerDto> 
         protected void doItImpl() {
             CustomerDetailPm.this.getPmParent().service.saveCustomer(getPmBean());
         }
-    } ;
+    };
 
     public CustomerDetailPm(CustomerDialogPm parent) {
         super(parent);
