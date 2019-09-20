@@ -17,6 +17,7 @@ public abstract class PmCommandImpl<T_PM_PARENT extends PmImpl> extends PmImpl<T
     }
 
     public final void doIt() {
+        PmFeedback newFeedbackContainer = new PmFeedback();
         log.info(getPmParent().getClass().getSimpleName() + " - doIt");
         log.info(getPmParent().getClass().getSimpleName() + " - Validiere vor doIt");
         validate();
@@ -25,10 +26,11 @@ public abstract class PmCommandImpl<T_PM_PARENT extends PmImpl> extends PmImpl<T
             log.info(getPmParent().getClass().getSimpleName() + " - Pm Command " + getTitle() + " ist valide");
             beforeDoIt();
             doItImpl();
-            afterDoIt();
+            afterDoIt(newFeedbackContainer);
         } else {
             log.info(getPmParent().getClass().getSimpleName() + " - Pm Command " + getTitle() + " ist nicht valide");
         }
+        this.pmFeedback = newFeedbackContainer;
     }
 
     protected abstract void doItImpl();
@@ -36,12 +38,12 @@ public abstract class PmCommandImpl<T_PM_PARENT extends PmImpl> extends PmImpl<T
     /**
      * Zum überschreiben durch den Entwickler
      */
-    public void afterDoItImpl() {
+    public void afterDoItImpl(PmFeedback feedback) {
 
     }
 
-    protected final void afterDoIt(){
-        afterDoItImpl();
+    protected final void afterDoIt(PmFeedback feedback){
+        afterDoItImpl(feedback);
     }
 
     public void beforeDoItImpl(){

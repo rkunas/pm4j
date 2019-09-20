@@ -36,7 +36,7 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
     // Eltern Element
     private T_PM_PARENT pmParent;
 
-    private PmFeedback pmFeedback = new PmFeedback();
+    protected PmFeedback pmFeedback = new PmFeedback();
 
     // Liste der Kind Pms
     protected List<PmImpl> childs = new ArrayList<>(0);
