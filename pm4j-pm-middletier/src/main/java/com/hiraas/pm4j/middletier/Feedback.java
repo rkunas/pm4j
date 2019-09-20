@@ -1,4 +1,4 @@
-package com.hiraas.pm4j.feedback;
+package com.hiraas.pm4j.middletier;
 
 
 import java.io.Serializable;

@@ -47,6 +47,11 @@
             <version>1.2</version>
         </dependency>
         <dependency>
+            <groupId>com.hiraas.pm4j</groupId>
+            <artifactId>pm4j-pm-middletier</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
             <version>2.8.1</version>

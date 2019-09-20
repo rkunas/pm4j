@@ -1,6 +1,6 @@
 package com.hiraas.pm4j.core;
 
-import com.hiraas.pm4j.feedback.FeedbackBucket;
+import com.hiraas.pm4j.middletier.FeedbackBucket;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 

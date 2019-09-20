@@ -1,4 +1,4 @@
-package com.hiraas.pm4j.feedback;
+package com.hiraas.pm4j.middletier;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.List;
 
 public class FeedbackBucket implements Serializable {
 
-    private List<Feedback> feedbackList = new ArrayList<>();
+    private List<Feedback> feedbackList = new ArrayList();
 
     public FeedbackBucket(){
 

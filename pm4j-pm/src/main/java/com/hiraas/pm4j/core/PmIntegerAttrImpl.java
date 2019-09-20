@@ -1,5 +1,7 @@
 package com.hiraas.pm4j.core;
 
+import com.hiraas.pm4j.middletier.FeedbackBucket;
+
 import java.io.Serializable;
 
 /**
@@ -38,7 +40,7 @@ public class PmIntegerAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T_
     }
 
     @Override
-    protected Boolean validateImpl() {
+    protected Boolean validateImpl(FeedbackBucket feedbackBucket) {
         if (!getRequired()) {
             return true;
         }
