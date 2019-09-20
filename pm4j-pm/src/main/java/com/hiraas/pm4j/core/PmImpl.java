@@ -36,7 +36,7 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
     // Eltern Element
     private T_PM_PARENT pmParent;
 
-    protected PmFeedback pmFeedback = new PmFeedback();
+    protected Feedback feedback = new Feedback();
 
     // Liste der Kind Pms
     protected List<PmImpl> childs = new ArrayList<>(0);
@@ -90,9 +90,9 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
      * Stößt validierung an.
      */
     public final void validate() {
-        PmFeedback newFeedbackContainer = new PmFeedback();
+        Feedback newFeedbackContainer = new Feedback();
         Boolean returnOfValidateImpl = validateImpl(newFeedbackContainer);
-        this.pmFeedback = newFeedbackContainer;
+        this.feedback = newFeedbackContainer;
         setValid(returnOfValidateImpl);
     }
 
@@ -102,7 +102,7 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
      *
      * @return
      */
-    protected Boolean validateImpl(PmFeedback feedback) {
+    protected Boolean validateImpl(Feedback feedback) {
         return Boolean.TRUE;
     }
 

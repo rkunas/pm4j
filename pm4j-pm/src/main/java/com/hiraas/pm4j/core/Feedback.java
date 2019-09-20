@@ -1,4 +1,4 @@
 package com.hiraas.pm4j.core;
 
-public class PmFeedback {
+public class Feedback {
 }
