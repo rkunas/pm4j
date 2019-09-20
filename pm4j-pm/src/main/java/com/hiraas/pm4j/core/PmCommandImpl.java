@@ -47,6 +47,10 @@ public abstract class PmCommandImpl<T_PM_PARENT extends PmImpl> extends PmImpl<T
         afterDoItImpl(feedbackBucket);
     }
 
+
+    /**
+     * Zum überschreiben durch den Entwickler
+     */
     public void beforeDoItImpl(){
 
     }
