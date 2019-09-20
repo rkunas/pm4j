@@ -1,6 +1,7 @@
 package com.hiraas.pm4j.core;
 
 
+import com.hiraas.pm4j.feedback.FeedbackBucket;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -36,7 +37,7 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
     // Eltern Element
     private T_PM_PARENT pmParent;
 
-    protected Feedback feedback = new Feedback();
+    protected FeedbackBucket feedbackBucket = new FeedbackBucket();
 
     // Liste der Kind Pms
     protected List<PmImpl> childs = new ArrayList<>(0);
@@ -90,9 +91,9 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
      * Stößt validierung an.
      */
     public final void validate() {
-        Feedback newFeedbackContainer = new Feedback();
-        Boolean returnOfValidateImpl = validateImpl(newFeedbackContainer);
-        this.feedback = newFeedbackContainer;
+        FeedbackBucket newFeedbackBucketContainer = new FeedbackBucket();
+        Boolean returnOfValidateImpl = validateImpl(newFeedbackBucketContainer);
+        this.feedbackBucket = newFeedbackBucketContainer;
         setValid(returnOfValidateImpl);
     }
 
@@ -102,7 +103,7 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
      *
      * @return
      */
-    protected Boolean validateImpl(Feedback feedback) {
+    protected Boolean validateImpl(FeedbackBucket feedbackBucket) {
         return Boolean.TRUE;
     }
 

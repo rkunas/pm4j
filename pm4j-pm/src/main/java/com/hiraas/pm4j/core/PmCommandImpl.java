@@ -1,5 +1,6 @@
 package com.hiraas.pm4j.core;
 
+import com.hiraas.pm4j.feedback.FeedbackBucket;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -17,7 +18,7 @@ public abstract class PmCommandImpl<T_PM_PARENT extends PmImpl> extends PmImpl<T
     }
 
     public final void doIt() {
-        Feedback newFeedbackContainer = new Feedback();
+        FeedbackBucket newFeedbackBucketContainer = new FeedbackBucket();
         log.info(getPmParent().getClass().getSimpleName() + " - doIt");
         log.info(getPmParent().getClass().getSimpleName() + " - Validiere vor doIt");
         validate();
@@ -26,11 +27,11 @@ public abstract class PmCommandImpl<T_PM_PARENT extends PmImpl> extends PmImpl<T
             log.info(getPmParent().getClass().getSimpleName() + " - Pm Command " + getTitle() + " ist valide");
             beforeDoIt();
             doItImpl();
-            afterDoIt(newFeedbackContainer);
+            afterDoIt(newFeedbackBucketContainer);
         } else {
             log.info(getPmParent().getClass().getSimpleName() + " - Pm Command " + getTitle() + " ist nicht valide");
         }
-        this.feedback = newFeedbackContainer;
+        this.feedbackBucket = newFeedbackBucketContainer;
     }
 
     protected abstract void doItImpl();
@@ -38,12 +39,12 @@ public abstract class PmCommandImpl<T_PM_PARENT extends PmImpl> extends PmImpl<T
     /**
      * Zum überschreiben durch den Entwickler
      */
-    public void afterDoItImpl(Feedback feedback) {
+    public void afterDoItImpl(FeedbackBucket feedbackBucket) {
 
     }
 
-    protected final void afterDoIt(Feedback feedback){
-        afterDoItImpl(feedback);
+    protected final void afterDoIt(FeedbackBucket feedbackBucket){
+        afterDoItImpl(feedbackBucket);
     }
 
     public void beforeDoItImpl(){
