@@ -13,9 +13,10 @@ public class FacesCustomerDialogPm extends CustomerDialogPm implements Serializa
     public void createMessage(FeedbackBucket feedbackBucket) {
         FacesContext context = FacesContext.getCurrentInstance();
 
-        feedbackBucket.getFeedbacks().stream().forEach(feedback -> {
-            context.addMessage(null, new FacesMessage(feedback.getSeverity().toString(), feedback.getMessage()));
-        });
+
+        feedbackBucket.getFeedbacks().stream().forEach(feedback ->
+                context.addMessage(null, new FacesMessage(feedback.getSeverity().toString(), feedback.getMessage()))
+        );
 
     }
 }
