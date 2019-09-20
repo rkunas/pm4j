@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Data
 public class SampleBean implements Serializable {
 
-    private CustomerDialogPm customerDialogPm = new CustomerDialogPm();
+    private FacesCustomerDialogPm customerDialogPm = new FacesCustomerDialogPm();
 
     @Inject
     @ConfigProperty(name = "version")

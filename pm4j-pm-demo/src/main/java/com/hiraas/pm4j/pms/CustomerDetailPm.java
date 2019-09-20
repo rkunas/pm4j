@@ -4,6 +4,8 @@ import com.hiraas.pm4j.core.PmBeanImpl;
 import com.hiraas.pm4j.core.PmCommandImpl;
 import com.hiraas.pm4j.core.PmStringAttrImpl;
 import com.hiraas.pm4j.core.PmTitle;
+import com.hiraas.pm4j.middletier.Feedback;
+import com.hiraas.pm4j.middletier.FeedbackBucket;
 import lombok.Data;
 
 @Data
@@ -20,6 +22,12 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm, CustomerDto> 
         @Override
         protected void doItImpl() {
             CustomerDetailPm.this.getPmParent().service.saveCustomer(getPmBean());
+        }
+
+        @Override
+        public void afterDoItImpl(FeedbackBucket feedbackBucket) {
+            feedbackBucket.addFeedback(Feedback.Severity.INFO,"Erfolgreich gespeichert !");
+            CustomerDetailPm.this.getPmParent().createMessage(feedbackBucket);
         }
     };
 

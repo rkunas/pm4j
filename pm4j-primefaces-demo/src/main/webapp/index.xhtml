@@ -13,6 +13,7 @@
     <p:outputPanel style="display:block">
         <h3 style="text-align: center">PM4J Primefaces</h3>
 
+            <p:growl id="detailGrowl" life="2000" showDetail="true"/>
 
             <p:tabView dynamic="true" widgetVar="tabs" id="tabs" cache="false">
                 <p:tab title="Search">
@@ -53,7 +54,7 @@
                 </p:tab>
                 <p:tab title="Detail">
                     <h:form>
-                        <p:growl id="detailGrowl" life="2000" />
+
                     <p:outputPanel id="detail">
                         <p:panelGrid columns="1" style="border: none;">
 
