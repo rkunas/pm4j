@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @JsonIgnoreProperties({"service"})
-public class CustomerDialogPm extends PmImpl {
+public class CustomerDialogPm extends PmRoot {
 
     public CustomerService service = new CustomerService();
 
@@ -47,9 +47,7 @@ public class CustomerDialogPm extends PmImpl {
         super();
     }
 
-    public void createMessage(FeedbackBucket feedbackBucket) {
 
-    }
 
 
 }
