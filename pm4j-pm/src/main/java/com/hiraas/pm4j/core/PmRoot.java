@@ -4,7 +4,11 @@ import com.hiraas.pm4j.middletier.FeedbackBucket;
 
 public class PmRoot extends PmImpl {
 
-    public void feedbackCall(FeedbackBucket feedbackBucket) {
+    /**
+     * Zum überschreiben durch die Jeweilige Technologie
+     * @param feedbackBucket
+     */
+    public void triggerRoot(FeedbackBucket feedbackBucket) {
 
     }
 }

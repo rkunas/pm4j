@@ -1,37 +1,38 @@
 package com.hiraas.pm4j;
 
 import com.hiraas.pm4j.pms.CustomerDialogPm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.HandlerMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/customer")
+@RequestMapping
 public class RestFullController {
 
-    private final CustomerDialogPm dialogPm = new CustomerDialogPm();
+    public final CustomerDialogPm dialogPm = new CustomerDialogPm();
 
-    @GetMapping
-    public ResponseEntity<CustomerDialogPm> getFulldialog() {
+    @GetMapping("/dialogpm/**/doit")
+    public ResponseEntity commandDoIt(HttpServletRequest request) {
+
+        new PmRestCommand()
+                .doIt(request, dialogPm);
+
         return ResponseEntity.ok(dialogPm);
     }
 
-    @GetMapping("/url/**")
-    public ResponseEntity getWild(final HttpServletRequest request) {
+    @GetMapping("/dialogpm/**/value/{pmVal}")
+    public ResponseEntity setValue(HttpServletRequest request, @PathVariable("pmVal") String pmVal){
 
-        String path = (String) request.getAttribute(
-                HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE);
-        return ResponseEntity.ok(dialogPm.customerDetailPm.lastName.getEnabled());
+        new PmRestValue()
+                .setValue(request,dialogPm, pmVal);
+
+        return ResponseEntity.ok(dialogPm);
     }
 
-
-    @GetMapping("/tuwas/**")
-    public ResponseEntity getTuwas(final HttpServletRequest request) {
+    @GetMapping("/fullpm/**")
+    public ResponseEntity pmFull(HttpServletRequest request) {
 
         dialogPm.searchText.setValue("e");
         dialogPm.searchCommandPm.doIt();

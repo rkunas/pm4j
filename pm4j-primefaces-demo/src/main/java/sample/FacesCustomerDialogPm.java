@@ -10,9 +10,8 @@ import java.io.Serializable;
 public class FacesCustomerDialogPm extends CustomerDialogPm implements Serializable {
 
     @Override
-    public void feedbackCall(FeedbackBucket feedbackBucket) {
+    public void in(FeedbackBucket feedbackBucket) {
         FacesContext context = FacesContext.getCurrentInstance();
-
 
         feedbackBucket.getFeedbacks().stream().forEach(feedback ->
                 context.addMessage(null, new FacesMessage(feedback.getSeverity().toString(), feedback.getMessage()))
