@@ -10,5 +10,5 @@ com/hiraas/pm4j/core/PmOption.class
 com/hiraas/pm4j/core/PmBooleanAttrImpl.class
 com/hiraas/pm4j/core/PmRowImpl.class
 com/hiraas/pm4j/core/PmDateTimeAttrImpl.class
-com/hiraas/pm4j/core/PmCommandImpl.class
 com/hiraas/pm4j/core/PmIntegerAttrImpl.class
+com/hiraas/pm4j/core/PmCommandImpl.class

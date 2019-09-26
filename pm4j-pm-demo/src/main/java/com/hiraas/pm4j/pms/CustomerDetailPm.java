@@ -27,7 +27,7 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm, CustomerDto> 
         @Override
         public void afterDoItImpl(FeedbackBucket feedbackBucket) {
             feedbackBucket.addFeedback(Feedback.Severity.INFO,"Erfolgreich gespeichert !");
-            CustomerDetailPm.this.getPmParent().feedbackCall(feedbackBucket);
+            CustomerDetailPm.this.getPmParent().triggerRoot(feedbackBucket);
         }
     };
 
