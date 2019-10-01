@@ -52,6 +52,20 @@
         </dependency>
 
         <dependency>
+            <groupId>com.hiraas.pm4j</groupId>
+            <artifactId>pm4j-fx</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hiraas.pm4j</groupId>
+            <artifactId>pm4j-pm-demo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
