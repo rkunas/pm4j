@@ -12,6 +12,7 @@
 
     <modules>
         <module>pm4j-pm</module>
+        <module>pm4j-fx-demo</module>
         <module>pm4j-pm-middletier</module>
         <module>pm4j-pm-demo</module>
         <module>pm4j-primefaces-demo</module>
