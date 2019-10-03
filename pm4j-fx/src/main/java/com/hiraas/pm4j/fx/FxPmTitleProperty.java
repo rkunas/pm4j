@@ -7,6 +7,9 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 
+/**
+ * Fx Pm Title Property
+ */
 public class FxPmTitleProperty extends StringProperty {
 
     private PmImpl pm;
