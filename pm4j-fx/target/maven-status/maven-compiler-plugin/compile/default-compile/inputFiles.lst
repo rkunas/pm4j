@@ -1,9 +1,2 @@
-/home/rkunas/Dev/Projects/pm4j/pm4j-fx/src/main/java/eu/kunas/pm4j/fx/FXButtonBuilder.java
-/home/rkunas/Dev/Projects/pm4j/pm4j-fx/src/main/java/eu/kunas/pm4j/fx/FXComboBoxBuilder.java
-/home/rkunas/Dev/Projects/pm4j/pm4j-fx/src/main/java/eu/kunas/pm4j/fx/FXControl.java
-/home/rkunas/Dev/Projects/pm4j/pm4j-fx/src/main/java/eu/kunas/pm4j/fx/FXButton.java
-/home/rkunas/Dev/Projects/pm4j/pm4j-fx/src/main/java/eu/kunas/pm4j/fx/FXBuilder.java
-/home/rkunas/Dev/Projects/pm4j/pm4j-fx/src/main/java/eu/kunas/pm4j/fx/FXListViewAttr.java
-/home/rkunas/Dev/Projects/pm4j/pm4j-fx/src/main/java/eu/kunas/pm4j/fx/FXListViewAttrBuilder.java
-/home/rkunas/Dev/Projects/pm4j/pm4j-fx/src/main/java/eu/kunas/pm4j/utils/Loader.java
-/home/rkunas/Dev/Projects/pm4j/pm4j-fx/src/main/java/eu/kunas/pm4j/fx/FXComboBox.java
+/home/ramazan/Dev/Projects/pm4j/pm4j-fx/src/main/java/com/hiraas/pm4j/fx/FxPmTitleProperty.java
+/home/ramazan/Dev/Projects/pm4j/pm4j-fx/src/main/java/com/hiraas/pm4j/fx/FxPmAttrValueProperty.java
