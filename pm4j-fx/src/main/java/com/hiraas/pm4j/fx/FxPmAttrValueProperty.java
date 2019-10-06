@@ -1,6 +1,6 @@
 package com.hiraas.pm4j.fx;
 
-import com.hiraas.pm4j.core.PmStringAttrImpl;
+import com.hiraas.pm4j.core.PmAttrImpl;
 import javafx.beans.InvalidationListener;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
@@ -8,9 +8,9 @@ import javafx.beans.value.ObservableValue;
 
 public class FxPmAttrValueProperty extends StringProperty {
 
-    private PmStringAttrImpl pmAttr;
+    private PmAttrImpl pmAttr;
 
-    public FxPmAttrValueProperty(PmStringAttrImpl pm) {
+    public FxPmAttrValueProperty(PmAttrImpl pm) {
         this.pmAttr = pm;
     }
 

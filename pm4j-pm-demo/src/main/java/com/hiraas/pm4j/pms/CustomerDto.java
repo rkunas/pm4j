@@ -10,6 +10,7 @@ public class CustomerDto implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
+    private Double account;
 
     public CustomerDto(Long id, String firstName, String lastName) {
         this.id = id;

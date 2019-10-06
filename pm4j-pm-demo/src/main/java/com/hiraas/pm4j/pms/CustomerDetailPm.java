@@ -1,9 +1,6 @@
 package com.hiraas.pm4j.pms;
 
-import com.hiraas.pm4j.core.PmBeanImpl;
-import com.hiraas.pm4j.core.PmCommandImpl;
-import com.hiraas.pm4j.core.PmStringAttrImpl;
-import com.hiraas.pm4j.core.PmTitle;
+import com.hiraas.pm4j.core.*;
 import com.hiraas.pm4j.middletier.Feedback;
 import com.hiraas.pm4j.middletier.FeedbackBucket;
 import lombok.Data;
@@ -16,6 +13,9 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm, CustomerDto> 
 
     @PmTitle("Nachname")
     public PmStringAttrImpl lastName = new PmStringAttrImpl(this);
+
+    @PmTitle("Account")
+    public PmDoubleAttrImpl account = new PmDoubleAttrImpl(this);
 
     @PmTitle("Speichern")
     public PmCommandImpl saveCommand = new PmCommandImpl(this) {

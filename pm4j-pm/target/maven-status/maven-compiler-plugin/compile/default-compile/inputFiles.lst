@@ -5,6 +5,7 @@
 /home/ramazan/Dev/Projects/pm4j/pm4j-pm/src/main/java/com/hiraas/pm4j/core/PmPage.java
 /home/ramazan/Dev/Projects/pm4j/pm4j-pm/src/main/java/com/hiraas/pm4j/core/PmBooleanAttrImpl.java
 /home/ramazan/Dev/Projects/pm4j/pm4j-pm/src/main/java/com/hiraas/pm4j/utils/BeanReadWriteUtil.java
+/home/ramazan/Dev/Projects/pm4j/pm4j-pm/src/main/java/com/hiraas/pm4j/core/PmDoubleAttrImpl.java
 /home/ramazan/Dev/Projects/pm4j/pm4j-pm/src/main/java/com/hiraas/pm4j/core/PmAttrImpl.java
 /home/ramazan/Dev/Projects/pm4j/pm4j-pm/src/main/java/com/hiraas/pm4j/core/PmStringAttrImpl.java
 /home/ramazan/Dev/Projects/pm4j/pm4j-pm/src/main/java/com/hiraas/pm4j/core/PmOption.java
