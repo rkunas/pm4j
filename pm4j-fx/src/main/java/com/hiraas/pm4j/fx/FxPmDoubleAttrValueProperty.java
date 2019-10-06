@@ -1,19 +1,26 @@
 package com.hiraas.pm4j.fx;
 
-import com.hiraas.pm4j.core.PmAttrImpl;
+import com.hiraas.pm4j.core.PmDoubleAttrImpl;
 import javafx.beans.InvalidationListener;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.StringPropertyBase;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-public class FxPmAttrValueProperty extends StringProperty {
+public class FxPmDoubleAttrValueProperty extends StringPropertyBase {
 
-    private PmAttrImpl pmAttr;
+    protected static Log log = LogFactory.getLog(FxPmDoubleAttrValueProperty.class);
 
-    public FxPmAttrValueProperty(PmAttrImpl pm) {
-        this.pmAttr = pm;
+    private PmDoubleAttrImpl pmAttr;
+
+    private FxPmDoubleAttrValueProperty() {
+
     }
 
+    public FxPmDoubleAttrValueProperty(PmDoubleAttrImpl pm) {
+        this.pmAttr = pm;
+    }
 
     @Override
     public void bind(ObservableValue<? extends String> observableValue) {
@@ -40,14 +47,18 @@ public class FxPmAttrValueProperty extends StringProperty {
         return null;
     }
 
+
     @Override
     public String get() {
-        return (String) pmAttr.getValue();
+        Double value = (Double)pmAttr.getValue();
+        log.info("Setting to FX " + value);
+        return String.valueOf(value);
     }
 
     @Override
     public void set(String s) {
-        pmAttr.setValue(s);
+        log.info("Getting from FX " + s);
+        pmAttr.setValue(Double.valueOf(s));
     }
 
     @Override

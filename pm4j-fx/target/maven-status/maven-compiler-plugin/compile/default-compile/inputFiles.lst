@@ -1,2 +1,3 @@
 /home/ramazan/Dev/Projects/pm4j/pm4j-fx/src/main/java/com/hiraas/pm4j/fx/FxPmTitleProperty.java
-/home/ramazan/Dev/Projects/pm4j/pm4j-fx/src/main/java/com/hiraas/pm4j/fx/FxPmAttrValueProperty.java
+/home/ramazan/Dev/Projects/pm4j/pm4j-fx/src/main/java/com/hiraas/pm4j/fx/FxPmStringAttrValueProperty.java
+/home/ramazan/Dev/Projects/pm4j/pm4j-fx/src/main/java/com/hiraas/pm4j/fx/FxPmDoubleAttrValueProperty.java

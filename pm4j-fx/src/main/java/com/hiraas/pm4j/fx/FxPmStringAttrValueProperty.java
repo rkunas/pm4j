@@ -1,26 +1,26 @@
 package com.hiraas.pm4j.fx;
 
-import com.hiraas.pm4j.core.PmImpl;
+import com.hiraas.pm4j.core.PmStringAttrImpl;
 import javafx.beans.InvalidationListener;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.StringPropertyBase;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-/**
- * Fx Pm Title Property
- */
-public class FxPmTitleProperty extends StringProperty {
+public class FxPmStringAttrValueProperty extends StringPropertyBase {
 
-    protected static Log log = LogFactory.getLog(FxPmTitleProperty.class);
+    protected static Log log = LogFactory.getLog(FxPmStringAttrValueProperty.class);
 
-    private PmImpl pm;
+    private PmStringAttrImpl pmAttr;
 
-    public FxPmTitleProperty(PmImpl pm){
-        this.pm = pm;
+    private FxPmStringAttrValueProperty() {
+
     }
 
+    public FxPmStringAttrValueProperty(PmStringAttrImpl pm) {
+        this.pmAttr = pm;
+    }
 
     @Override
     public void bind(ObservableValue<? extends String> observableValue) {
@@ -47,16 +47,18 @@ public class FxPmTitleProperty extends StringProperty {
         return null;
     }
 
+
     @Override
     public String get() {
-        String title =  pm.getTitle();
-        log.info("Getting Title " + title);
-        return title;
+        String value = (String) pmAttr.getValue();
+        log.info("Setting to FX " + value);
+        return value;
     }
 
     @Override
     public void set(String s) {
-
+        log.info("Getting from FX " + s);
+        pmAttr.setValue(s);
     }
 
     @Override
