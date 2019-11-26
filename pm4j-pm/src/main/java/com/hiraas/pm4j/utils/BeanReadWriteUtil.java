@@ -64,7 +64,7 @@ public class BeanReadWriteUtil<T_BEAN> {
 
             methodNameString = buildSetterMethodName(pmField);
 
-            beanFieldMethod = bean.getClass().getMethod(methodNameString,pmAttr.getPmAttrType());
+            beanFieldMethod = bean.getClass().getMethod(methodNameString, pmAttr.getPmAttrType());
 
             beanFieldMethod.invoke(bean, pmAttr.getValue());
         } catch (IllegalAccessException exc) {
@@ -88,9 +88,7 @@ public class BeanReadWriteUtil<T_BEAN> {
             beanFieldMethod = bean.getClass().getMethod(methodNameString);
             methodsValue = beanFieldMethod.invoke(bean);
 
-            if (methodsValue != null) {
-                pmAttr.setValue(methodsValue);
-            }
+            pmAttr.setValue(methodsValue);
 
         } catch (NoSuchMethodException exc) {
             log.error("Metod " + methodNameString + " not found on Bean " + bean.getClass().toString() + ". Please check the Bean, it has to follow Java Code Style for getter Methods.");

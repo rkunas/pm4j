@@ -5,6 +5,7 @@ import javafx.beans.InvalidationListener;
 import javafx.beans.property.StringPropertyBase;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -50,7 +51,13 @@ public class FxPmStringAttrValueProperty extends StringPropertyBase {
 
     @Override
     public String get() {
+
         String value = (String) pmAttr.getValue();
+
+        if(StringUtils.isEmpty(value)){
+            value = "";
+        }
+
         log.info("Setting to FX " + value);
         return value;
     }

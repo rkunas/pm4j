@@ -2,7 +2,6 @@ package com.hiraas.pm4j.pms;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.hiraas.pm4j.core.*;
-import com.hiraas.pm4j.middletier.FeedbackBucket;
 import lombok.Data;
 
 import java.util.List;
@@ -44,7 +43,7 @@ public class CustomerDialogPm extends PmRoot {
     public CustomerDetailPm customerDetailPm = new CustomerDetailPm(this);
 
     public CustomerDialogPm() {
-        super();
+        super(null);
     }
 
 

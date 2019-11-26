@@ -39,6 +39,10 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
 
     protected FeedbackBucket feedbackBucket = new FeedbackBucket();
 
+    public FeedbackBucket getFeedbackBucket() {
+        return feedbackBucket;
+    }
+
     // Liste der Kind Pms
     protected List<PmImpl> childs = new ArrayList<>(0);
 
