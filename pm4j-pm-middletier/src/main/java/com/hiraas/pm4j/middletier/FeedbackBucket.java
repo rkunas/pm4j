@@ -8,6 +8,16 @@ public class FeedbackBucket implements Serializable {
 
     private List<Feedback> feedbackList = new ArrayList();
 
+    public String feedbacksAsString(){
+        StringBuffer buffer = new StringBuffer();
+
+        feedbackList.stream().forEach(feed ->{
+            buffer.append(feed.getMessage() + " ");
+        });
+
+        return buffer.toString();
+    }
+
     public FeedbackBucket(){
 
     }
