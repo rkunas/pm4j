@@ -31,7 +31,7 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
     // Drückt aus ob das PM Aktiv ist, editierbar ist
     private Boolean enabled = Boolean.TRUE;
     // Gibt an ob das Value gefuellt sein muss
-    private Boolean required;
+    private Boolean required = Boolean.FALSE;
     // Im idealfall hat das entsprechende UI Widget ein Label welches dieses Feld liest
     private String title = "DEFAULT_TITLE";
     // Eltern Element
@@ -47,8 +47,10 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
     protected List<PmImpl> childs = new ArrayList<>(0);
 
     public PmImpl(T_PM_PARENT parent) {
-        this.pmParent = parent;
-        this.addThisAsChildToParent(parent, this);
+        if(parent != null) {
+            this.pmParent = parent;
+            this.addThisAsChildToParent(parent, this);
+        }
     }
 
     /**
@@ -58,7 +60,9 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
      * @param child
      */
     protected void addThisAsChildToParent(PmImpl parent, PmImpl child) {
-        parent.childs.add(child);
+       if(child!= null){
+           parent.childs.add(child);
+       }
     }
 
     public PmImpl() {
@@ -74,7 +78,7 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
     }
 
     public Boolean getRequiredImpl() {
-        return null;
+        return required;
     }
 
     public void setRequired(Boolean required) {
@@ -99,6 +103,13 @@ public class PmImpl<T_PM_PARENT extends PmImpl> implements Serializable {
         Boolean returnOfValidateImpl = validateImpl(newFeedbackBucketContainer);
         this.feedbackBucket = newFeedbackBucketContainer;
         setValid(returnOfValidateImpl);
+        // callValidateChilds();
+    }
+
+    protected void callValidateChilds(){
+        childs.forEach(childPm ->{
+            childPm.validate();
+        });
     }
 
     /**

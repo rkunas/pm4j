@@ -1,6 +1,7 @@
 com/hiraas/pm4j/core/PmStringAttrImpl.class
 com/hiraas/pm4j/core/PmPage.class
 com/hiraas/pm4j/core/PmTitle.class
+com/hiraas/pm4j/core/PmLongAttrImpl.class
 com/hiraas/pm4j/core/PmAttrImpl.class
 com/hiraas/pm4j/core/PmImpl.class
 com/hiraas/pm4j/utils/BeanReadWriteUtil.class

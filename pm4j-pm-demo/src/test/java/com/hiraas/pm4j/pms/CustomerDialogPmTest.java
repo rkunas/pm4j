@@ -13,6 +13,7 @@ public class CustomerDialogPmTest {
         customerDto.setFirstName("Demo");
         customerDto.setLastName("Last");
         customerDto.setAccount(2.0);
+        customerDto.setFriend(false);
 
         customerDialogPm.customerDetailPm.setPmBean(customerDto);
 
@@ -20,9 +21,12 @@ public class CustomerDialogPmTest {
         customerDto.setFirstName(null);
         customerDto.setLastName("Last");
         customerDto.setAccount(2.0);
+        customerDto2.setFriend(true);
 
         customerDialogPm.customerDetailPm.setPmBean(customerDto2);
 
         System.out.println(customerDialogPm.customerDetailPm.firstName.getValue());
+
+        System.out.println(customerDialogPm.getCustomerDetailPm().getPmBean().getFriend());
     }
 }

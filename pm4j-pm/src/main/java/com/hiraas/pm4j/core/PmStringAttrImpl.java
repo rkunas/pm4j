@@ -13,12 +13,17 @@ public class PmStringAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T_P
     }
 
     @Override
+    public Class getPmAttrType() {
+        return String.class;
+    }
+
+    @Override
     protected void changeCheck(String originVal, String newVal) {
         if (originVal == null && newVal == null) {
             return;
         }
         if (originVal == null && newVal != null) {
-            if (newVal.isEmpty()) {
+            if (newVal != null & newVal == "") {
                 return;
             } else {
                 changed = Boolean.TRUE;
@@ -27,7 +32,7 @@ public class PmStringAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T_P
         }
 
         if (originVal != null && newVal == null) {
-            if (originVal.isEmpty()) {
+            if (originVal != null & originVal == "") {
                 return;
             } else {
                 changed = Boolean.TRUE;
@@ -50,7 +55,7 @@ public class PmStringAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T_P
             log.info(getTitle() + "Wert ist erforderlich");
             return false;
         }
-        if (value.isEmpty()) {
+        if (value != null & value == "") {
             log.info(getTitle() + "Wert ist erforderlich");
             return false;
         }

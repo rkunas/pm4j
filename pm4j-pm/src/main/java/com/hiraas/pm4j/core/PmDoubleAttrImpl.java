@@ -14,6 +14,11 @@ public class PmDoubleAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T_P
     }
 
     @Override
+    public Class getPmAttrType() {
+        return Double.class;
+    }
+
+    @Override
     protected void changeCheck(Double originVal, Double newVal) {
         log.info("Checking " + getTitle());
         if (newVal == null && originVal == null) {

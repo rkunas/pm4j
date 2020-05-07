@@ -17,6 +17,9 @@ public class CustomerDetailPm extends PmBeanImpl<CustomerDialogPm, CustomerDto> 
     @PmTitle("Account")
     public PmDoubleAttrImpl account = new PmDoubleAttrImpl(this);
 
+    @PmTitle("Friend")
+    public PmBooleanAttrImpl friend = new PmBooleanAttrImpl(this);
+
     @PmTitle("Speichern")
     public PmCommandImpl saveCommand = new PmCommandImpl(this) {
         @Override

@@ -7,19 +7,19 @@ import java.io.Serializable;
 /**
  * Created by kunasra on 26.11.14.
  */
-public class PmIntegerAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T_PM_PARENT, Integer> implements Serializable {
+public class PmLongAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T_PM_PARENT, Long> implements Serializable {
 
-    public PmIntegerAttrImpl(T_PM_PARENT parent) {
+    public PmLongAttrImpl(T_PM_PARENT parent) {
         super(parent);
     }
 
     @Override
     public Class getPmAttrType() {
-        return Integer.class;
+        return Long.class;
     }
 
     @Override
-    protected void changeCheck(Integer originVal, Integer newVal) {
+    protected void changeCheck(Long originVal, Long newVal) {
         log.info("Checking " + getTitle());
         if (newVal == null && originVal == null) {
             log.info("Both null: " + newVal + " " + originVal);

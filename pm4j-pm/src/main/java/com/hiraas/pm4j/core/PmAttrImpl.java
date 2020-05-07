@@ -4,15 +4,13 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
 import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by ramazan on 02.11.14.
  */
-public class PmAttrImpl<T_PM_PARENT extends PmImpl, T_PM_BEAN extends Object> extends PmImpl<T_PM_PARENT> implements Serializable {
+public abstract class PmAttrImpl<T_PM_PARENT extends PmImpl, T_PM_BEAN extends Object> extends PmImpl<T_PM_PARENT> implements Serializable {
 
     protected static Log log = LogFactory.getLog(PmAttrImpl.class);
     protected Boolean changed = Boolean.FALSE;
@@ -31,31 +29,7 @@ public class PmAttrImpl<T_PM_PARENT extends PmImpl, T_PM_BEAN extends Object> ex
         this.defaultValue = defaultValue;
     }
 
-    public Class getPmAttrType() {
-        Type pmType = null;
-
-        pmType = getClass().getGenericSuperclass();
-
-        if (!pmType.getTypeName().startsWith(PmAttrImpl.class.getCanonicalName())) {
-            pmType = getClass().getSuperclass().getGenericSuperclass();
-        }
-
-        ParameterizedType pmParameterizedType = (ParameterizedType) pmType;
-
-        Class beanClassofPm = null;
-
-        // Identify Bean Class,
-        // PmStringAttrImpl is String,
-        // There can be several numbers of Argument types, but the last one is the bean value type
-        if (pmParameterizedType.getActualTypeArguments().length == 2) {
-            beanClassofPm = (Class) pmParameterizedType.getActualTypeArguments()[1];
-        }
-        if (pmParameterizedType.getActualTypeArguments().length == 1) {
-            beanClassofPm = (Class) pmParameterizedType.getActualTypeArguments()[0];
-        }
-
-        return beanClassofPm;
-    }
+    public abstract Class getPmAttrType();
 
     /**
      * Liefert eine leere liste falls es nicht überschrieben wird
@@ -84,8 +58,17 @@ public class PmAttrImpl<T_PM_PARENT extends PmImpl, T_PM_BEAN extends Object> ex
         T_PM_BEAN value2 = beforeValueSetImpl(value1);
         beforeValueSetImpl();
         changeCheck(this.value, value2);
+        setValueImpl(value1);
         this.value = value2;
         afterValueSetImpl();
+    }
+
+    /**
+     * Diese Methode kann überschrieben werden. Diese Methode wird zwischen Before und after aufgerufen
+     * @param value1
+     */
+    public void setValueImpl(T_PM_BEAN value1){
+
     }
 
     /**

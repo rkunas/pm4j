@@ -18,6 +18,11 @@ public class PmDateTimeAttrImpl<T_PM_PARENT extends PmImpl> extends PmAttrImpl<T
         super(parent);
     }
 
+    @Override
+    public Class getPmAttrType() {
+        return DateTime.class;
+    }
+
     public String getStringValue() {
         if (getValue() != null) {
             stringValue = formatter.print(getValue());

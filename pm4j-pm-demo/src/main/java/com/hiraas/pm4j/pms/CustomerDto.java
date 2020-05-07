@@ -11,6 +11,7 @@ public class CustomerDto implements Serializable {
     private String firstName;
     private String lastName;
     private Double account;
+    private Boolean friend;
 
     public CustomerDto(Long id, String firstName, String lastName) {
         this.id = id;
